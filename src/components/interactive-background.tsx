@@ -53,19 +53,19 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
         this.baseX = this.x;
         this.baseY = this.y;
         this.size = Math.random() * 2 + 1;
-        this.speedX = Math.random() * 2 - 1;
-        this.speedY = Math.random() * 2 - 1;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
         this.color = color;
         this.density = Math.random() * 30 + 1;
       }
 
       update() {
         // Mouse interaction
-        const dx = mouse.current.x - this.x;
-        const dy = mouse.current.y - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const forceDirectionX = dx / distance;
-        const forceDirectionY = dy / distance;
+        const dxMouse = mouse.current.x - this.x;
+        const dyMouse = mouse.current.y - this.y;
+        const distance = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+        const forceDirectionX = dxMouse / distance;
+        const forceDirectionY = dyMouse / distance;
         const maxDistance = 100;
         const force = (maxDistance - distance) / maxDistance;
 
@@ -76,14 +76,15 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
           this.x -= directionX;
           this.y -= directionY;
         } else {
-          if (this.x !== this.baseX) {
-            const dx = this.x - this.baseX;
-            this.x -= dx / 10;
-          }
-          if (this.y !== this.baseY) {
-            const dy = this.y - this.baseY;
-            this.y -= dy / 10;
-          }
+            // Default movement
+            if (this.x > canvas.width || this.x < 0) {
+                this.speedX = -this.speedX;
+            }
+            if (this.y > canvas.height || this.y < 0) {
+                this.speedY = -this.speedY;
+            }
+            this.x += this.speedX;
+            this.y += this.speedY;
         }
       }
 
