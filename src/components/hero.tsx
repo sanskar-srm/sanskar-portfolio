@@ -30,7 +30,7 @@ export default function Hero() {
             <div className="relative">
                 <div className="absolute inset-0 border-4 rounded-full border-primary/50 shadow-lg accent-glow"></div>
                 <Image
-                  src="/profile.png"
+                  src="/profile.jpg"
                   alt="Profile photo"
                   width={400}
                   height={400}
