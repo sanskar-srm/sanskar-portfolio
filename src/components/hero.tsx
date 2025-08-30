@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="container mx-auto">
         <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
           <div className="space-y-6">
-            <h1 className="text-4xl font-bold md:text-6xl font-headline text-glow">Your Name</h1>
+            <h1 className="text-4xl font-bold md:text-6xl font-headline text-glow">Sanskar Bhadani</h1>
             <p className="max-w-lg text-lg text-muted-foreground">
               I&apos;m a passionate developer with a knack for creating dynamic, user-friendly web
               experiences. I thrive on turning complex problems into beautiful, intuitive designs.
