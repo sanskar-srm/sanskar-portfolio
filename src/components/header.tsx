@@ -30,10 +30,7 @@ export default function Header() {
       )}
     >
       <nav className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-2xl font-bold font-headline text-glow">
-            KineticFolio
-          </a>
+        <div className="flex items-center justify-center h-16">
           <div className="items-center hidden space-x-4 md:flex">
             {navLinks.map(link => (
               <a
