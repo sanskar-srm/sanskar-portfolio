@@ -36,7 +36,7 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium rounded-md text-foreground hover:text-primary transition-colors"
+                className="px-3 py-2 text-sm font-medium rounded-md text-foreground hover:text-accent hover:text-glow-accent transition-all"
               >
                 {link.name}
               </a>

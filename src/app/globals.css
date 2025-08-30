@@ -77,4 +77,7 @@
   .accent-glow {
     box-shadow: 0 0 10px hsl(var(--accent)), 0 0 24px hsl(var(--accent) / 0.7);
   }
+  .text-glow-accent {
+    text-shadow: 0 0 8px hsl(var(--accent) / 0.8), 0 0 20px hsl(var(--accent) / 0.5);
+  }
 }
