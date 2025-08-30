@@ -26,15 +26,19 @@ export default function Hero() {
               </Button>
             </div>
           </div>
-          <div className="flex justify-center md:justify-end">
-            <Image
-              src="https://picsum.photos/400/400"
-              alt="Profile photo"
-              width={400}
-              height={400}
-              className="object-cover border-4 rounded-full border-primary/50 shadow-lg accent-glow"
-              data-ai-hint="professional headshot"
-            />
+          <div className="flex justify-center md:justify-end image-wrapper-3d">
+            <div className="relative">
+                <div className="absolute inset-0 border-4 rounded-full border-primary/50 shadow-lg accent-glow"></div>
+                <Image
+                  src="/profile.png"
+                  alt="Profile photo"
+                  width={400}
+                  height={400}
+                  className="object-cover rounded-full floating-image"
+                  data-ai-hint="professional headshot"
+                  priority
+                />
+            </div>
           </div>
         </div>
       </div>

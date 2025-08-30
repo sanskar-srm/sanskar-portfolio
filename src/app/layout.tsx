@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {Toaster} from '@/components/ui/toaster';
 import './globals.css';
+import './animations.css';
 
 export const metadata: Metadata = {
   title: 'KineticFolio',
