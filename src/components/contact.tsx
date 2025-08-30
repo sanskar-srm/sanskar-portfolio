@@ -1,0 +1,74 @@
+'use client';
+import {Button} from '@/components/ui/button';
+import {Input} from '@/components/ui/input';
+import {Label} from '@/components/ui/label';
+import {Textarea} from '@/components/ui/textarea';
+import {useToast} from '@/hooks/use-toast';
+import {Github, Linkedin, Mail} from 'lucide-react';
+import type React from 'react';
+
+export default function Contact() {
+  const {toast} = useToast();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: 'Message Sent!',
+      description: "Thanks for reaching out. I'll get back to you soon.",
+    });
+    const form = e.target as HTMLFormElement;
+    form.reset();
+  };
+  return (
+    <section id="contact" className="py-20 sm:py-28">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-bold text-center md:text-4xl font-headline mb-12 text-glow">
+          Get In Touch
+        </h2>
+        <div className="max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+            <div className="space-y-6">
+              <p className="text-muted-foreground">
+                Have a project in mind or just want to say hi? Feel free to reach out. I&apos;m
+                always open to discussing new opportunities and collaborations.
+              </p>
+              <div className="flex space-x-4">
+                <Button asChild variant="outline" size="icon" className="rounded-full">
+                  <a href="mailto:your.email@example.com" aria-label="Email">
+                    <Mail className="w-5 h-5" />
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="icon" className="rounded-full">
+                  <a href="#" aria-label="LinkedIn">
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="icon" className="rounded-full">
+                  <a href="#" aria-label="GitHub">
+                    <Github className="w-5 h-5" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="space-y-2">
+                <Label htmlFor="name">Name</Label>
+                <Input id="name" placeholder="Your Name" required />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="email" placeholder="your.email@example.com" required />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="message">Message</Label>
+                <Textarea id="message" placeholder="Your message..." required />
+              </div>
+              <Button type="submit" className="w-full accent-glow">
+                Send Message
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
