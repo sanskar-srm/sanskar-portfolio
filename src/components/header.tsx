@@ -4,10 +4,10 @@ import {cn} from '@/lib/utils';
 import {useEffect, useState} from 'react';
 
 const navLinks = [
-  {name: 'About', href: '#about'},
+  {name: 'Me', href: '#about'},
   {name: 'Skills', href: '#skills'},
   {name: 'Projects', href: '#projects'},
-  {name: 'Certs', href: '#certs'},
+  {name: 'C&A', href: '#certs'},
   {name: 'Contact', href: '#contact'},
 ];
 
