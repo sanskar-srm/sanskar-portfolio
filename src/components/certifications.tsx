@@ -1,8 +1,36 @@
 import {Button} from '@/components/ui/button';
 import {Card, CardContent, CardHeader} from '@/components/ui/card';
-import {Award, ExternalLink} from 'lucide-react';
+import {Award, ExternalLink, Trophy, Calendar, BookOpen} from 'lucide-react';
 
-const certificationsData = [
+const hackathonData = [
+  {
+    title: 'Global AI Hackathon 2023',
+    issuer: 'AI Innovators',
+    award: '1st Place Winner',
+    url: '#',
+  },
+  {
+    title: 'Web3 & Blockchain Hackfest',
+    issuer: 'CryptoCoders',
+    award: 'Best DApp Award',
+    url: '#',
+  },
+];
+
+const bootcampData = [
+  {
+    title: 'Full-Stack Developer Bootcamp',
+    issuer: 'Dev Academy',
+    url: '#',
+  },
+  {
+    title: 'Cybersecurity Summit 2022',
+    issuer: 'SecureNet',
+    url: '#',
+  },
+];
+
+const coursesData = [
   {
     title: 'Certified Frontend Developer',
     issuer: 'Pro Certs Inc.',
@@ -24,31 +52,103 @@ export default function Certifications() {
   return (
     <section id="certs" className="py-20 sm:py-28">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center md:text-4xl font-headline mb-12 text-glow">
+        <h2 className="text-3xl font-bold text-center md:text-4xl font-headline mb-16 text-glow">
           Certifications &amp; Awards
         </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {certificationsData.map(cert => (
-            <Card
-              key={cert.title}
-              className="transition-colors duration-300 border-primary/20 bg-card/50 backdrop-blur-sm hover:border-primary/50"
-            >
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <Award className="w-8 h-8 text-primary" />
-                  <Button asChild variant="ghost" size="icon">
-                    <a href={cert.url} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <h3 className="text-lg font-bold font-headline">{cert.title}</h3>
-                <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="space-y-16">
+          {/* Hackathons Section */}
+          <div>
+            <h3 className="flex items-center justify-center text-2xl font-semibold text-center font-headline mb-8 text-primary">
+              <Trophy className="w-6 h-6 mr-3" />
+              Hackathon Certifications
+            </h3>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              {hackathonData.map(cert => (
+                <Card
+                  key={cert.title}
+                  className="transition-colors duration-300 border-primary/20 bg-card/50 backdrop-blur-sm hover:border-primary/50"
+                >
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <Award className="w-8 h-8 text-primary" />
+                      <Button asChild variant="ghost" size="icon">
+                        <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <h4 className="text-lg font-bold font-headline">{cert.title}</h4>
+                    <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                    <p className="mt-2 text-sm font-semibold text-accent">{cert.award}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Bootcamps and Events Section */}
+          <div>
+            <h3 className="flex items-center justify-center text-2xl font-semibold text-center font-headline mb-8 text-primary">
+              <Calendar className="w-6 h-6 mr-3" />
+              Bootcamps and Events
+            </h3>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+              {bootcampData.map(cert => (
+                <Card
+                  key={cert.title}
+                  className="transition-colors duration-300 border-primary/20 bg-card/50 backdrop-blur-sm hover:border-primary/50"
+                >
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <Award className="w-8 h-8 text-primary" />
+                      <Button asChild variant="ghost" size="icon">
+                        <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <h4 className="text-lg font-bold font-headline">{cert.title}</h4>
+                    <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Courses Section */}
+          <div>
+            <h3 className="flex items-center justify-center text-2xl font-semibold text-center font-headline mb-8 text-primary">
+              <BookOpen className="w-6 h-6 mr-3" />
+              Courses
+            </h3>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {coursesData.map(cert => (
+                <Card
+                  key={cert.title}
+                  className="transition-colors duration-300 border-primary/20 bg-card/50 backdrop-blur-sm hover:border-primary/50"
+                >
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <Award className="w-8 h-8 text-primary" />
+                      <Button asChild variant="ghost" size="icon">
+                        <a href={cert.url} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </Button>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <h4 className="text-lg font-bold font-headline">{cert.title}</h4>
+                    <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
