@@ -52,8 +52,6 @@ export const MySqlIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-import type { SVGProps } from "react";
-
 export const CppIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
@@ -93,5 +91,18 @@ export const FirebaseIcon = (props: SVGProps<SVGSVGElement>) => (
   >
     <title>Firebase</title>
     <path fill="currentColor" d="M27.35 80.52l10.68-68.44c.37-2.33 3.5-2.89 4.6-.8l11.48 21.48-26.76 47.76zm75.94 16.63L93.1 34.11c-.31-1.96-2.76-2.76-4.17-1.35L24.71 97.15l35.54 19.95a7.447 7.447 0 007.18 0l35.86-19.95zm-28.85-55L66.21 26.5c-.92-1.78-3.44-1.78-4.36 0L25.7 90.95l48.74-48.8z"/>
+  </svg>
+);
+
+export const PythonIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    {...props}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 128 128"
+    fill="currentColor"
+  >
+    <title>Python</title>
+    {/* Snake-like shape */}
+    <path d="M63.9 16c-9.8 0-18 8.2-18 18v10h22c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H34c-9.9 0-18 8.1-18 18v18c0 9.8 8.1 18 18 18h30c9.9 0 18-8.2 18-18V92H60c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h30c9.9 0 18-8.2 18-18V34c0-9.8-8.1-18-18-18H63.9zM54 32c2.2 0 4 1.8 4 4s-1.8 4-4 4a4 4 0 1 1 0-8zm20 64c2.2 0 4 1.8 4 4s-1.8 4-4 4a4 4 0 1 1 0-8z" />
   </svg>
 );
