@@ -13,6 +13,18 @@
   }
 }
 
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .floating-image {
   animation: float 6s ease-in-out infinite;
   transform-style: preserve-3d;
@@ -20,4 +32,8 @@
 
 .image-wrapper-3d {
   perspective: 1000px;
+}
+
+.sliding-icons {
+  animation: slide 10s ease-in-out infinite alternate;
 }
