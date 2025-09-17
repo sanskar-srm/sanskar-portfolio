@@ -29,7 +29,7 @@ const hackathonData = [
 
 const bootcampData = [
   {
-    title: 'Google Cloud Skills Boost',
+    title: 'Firebase Studio Bootcamp',
     issuer: 'Google',
     url: '#',
     pdfUrl: '/bootcampCert/firebase.pdf',
