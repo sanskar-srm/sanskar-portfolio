@@ -158,12 +158,12 @@ export default function Certifications() {
                     </Card>
                   </DialogTrigger>
                   {(cert.imageUrl || cert.pdfUrl) && (
-                    <DialogContent className="max-w-4xl h-[90vh]">
+                    <DialogContent className="max-w-4xl">
                       <DialogHeader>
                         <DialogTitle>{cert.title}</DialogTitle>
                       </DialogHeader>
                       {cert.imageUrl ? (
-                        <div className="relative w-full h-full">
+                        <div className="relative aspect-video w-full">
                           <Image
                             src={cert.imageUrl}
                             alt={`${cert.title} Certificate`}
@@ -172,7 +172,9 @@ export default function Certifications() {
                           />
                         </div>
                       ) : cert.pdfUrl ? (
-                        <iframe src={cert.pdfUrl} className="w-full h-full border-0" title={`${cert.title} PDF`} />
+                        <div className="h-[80vh] w-full">
+                          <iframe src={cert.pdfUrl} className="w-full h-full border-0" title={`${cert.title} PDF`} />
+                        </div>
                       ) : null}
                     </DialogContent>
                   )}
