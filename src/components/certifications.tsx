@@ -36,7 +36,7 @@ const bootcampData = [
   },
   {
     title: 'Solution Architecture Job Simulation',
-    issuer: 'SecureNet',
+    issuer: 'Amazon Web Services',
     url: '#',
     imageUrl: '/bootcampCert/cybersecurity-cert.png',
   },
