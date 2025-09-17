@@ -38,7 +38,7 @@ const bootcampData = [
     title: 'Solution Architecture Job Simulation',
     issuer: 'Amazon Web Services',
     url: '#',
-    imageUrl: '/bootcampCert/cybersecurity-cert.png',
+    imageUrl: '/bootcampCert/AWS.jpg',
   },
 ];
 
@@ -125,7 +125,7 @@ export default function Certifications() {
 
           {/* Bootcamps and Events Section */}
           <div>
-            <h3 className="flex items-center justify-center text-2xl font-semibold text-center font.headline mb-8 text-primary">
+            <h3 className="flex items-center justify-center text-2xl font-semibold text-center font-headline mb-8 text-primary">
               <Calendar className="w-6 h-6 mr-3" />
               Bootcamps and Events
             </h3>
