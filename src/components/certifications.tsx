@@ -35,7 +35,7 @@ const bootcampData = [
     pdfUrl: '/bootcampCert/firebase.pdf',
   },
   {
-    title: 'Cybersecurity Summit 2022',
+    title: 'Solution Architecture Job Simulation',
     issuer: 'SecureNet',
     url: '#',
     imageUrl: '/bootcampCert/cybersecurity-cert.png',
@@ -163,7 +163,7 @@ export default function Certifications() {
                         <DialogTitle>{cert.title}</DialogTitle>
                       </DialogHeader>
                       {cert.imageUrl ? (
-                        <div className="relative aspect-[1.414/1] w-full h-full">
+                        <div className="relative w-full h-full">
                           <Image
                             src={cert.imageUrl}
                             alt={`${cert.title} Certificate`}
@@ -216,5 +216,3 @@ export default function Certifications() {
     </section>
   );
 }
-
-    
