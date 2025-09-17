@@ -59,9 +59,8 @@ export default function Contact() {
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="rounded-full">
-                  <a href="https://github.com/SanskarBhadani" aria-label="GitHub">
-                    <Github className="w-5 h
--5" />
+                  <a href="https://github.com/sanskar-srm" aria-label="GitHub">
+                    <Github className="w-5 h-5" />
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="rounded-full">
