@@ -40,7 +40,7 @@ export function ProjectCard({project, reverse = false}: ProjectCardProps) {
           width={600}
           height={400}
           data-ai-hint={project.imageHint}
-          className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+          className="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
         />
       </div>
       <div className="space-y-4">
