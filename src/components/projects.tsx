@@ -9,7 +9,7 @@ const projectsData = [
     imageUrl: 'https://picsum.photos/seed/e-commerce/600/400',
     imageHint: 'online store',
     githubUrl: '#',
-    liveUrl: '#',
+    liveUrl: 'https://schedura-new.vercel.app/',
     tech: ['ReactJS', 'Node.js', 'MongoDB', 'TailwindCSS'],
     objectives: 'Increase online sales and improve user experience for a retail client.',
     projectType: 'e-commerce implementation',
