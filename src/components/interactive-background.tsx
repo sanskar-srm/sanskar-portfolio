@@ -20,6 +20,22 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
     }
   }, []);
 
+  const handleTouchMove = useCallback((event: TouchEvent) => {
+    if (canvasRef.current && event.touches.length > 0) {
+      const rect = canvasRef.current.getBoundingClientRect();
+      mouse.current.x = event.touches[0].clientX - rect.left;
+      mouse.current.y = event.touches[0].clientY - rect.top;
+    }
+  }, []);
+
+  const handleMouseOut = useCallback(() => {
+    mouse.current = { x: -1000, y: -1000 };
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    mouse.current = { x: -1000, y: -1000 };
+  }, []);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -147,14 +163,20 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
     animate();
 
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseout', handleMouseOut);
+    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('touchend', handleTouchEnd);
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseout', handleMouseOut);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [handleMouseMove]);
+  }, [handleMouseMove, handleTouchMove, handleMouseOut, handleTouchEnd]);
 
   return <canvas ref={canvasRef} className={cn('fixed top-0 left-0 -z-10', className)} />;
 };
