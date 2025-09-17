@@ -5,7 +5,7 @@ const projectsData = [
     title: 'E-commerce Platform',
     role: 'Lead Frontend Developer',
     description:
-      'Developed a fully responsive e-commerce website from scratch, leading to a 40% increase in user engagement.',
+      'A feature-rich, responsive web application for appointment booking and scheduling, designed with a clean and intuitive interface. The platform allows users to easily view available slots, book appointments through a calendar-based system, and manage their schedules effortlessly.',
     imageUrl: 'https://picsum.photos/seed/e-commerce/600/400',
     imageHint: 'online store',
     githubUrl: '#',
