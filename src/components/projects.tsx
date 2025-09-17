@@ -6,7 +6,7 @@ const projectsData = [
     role: 'Lead Frontend Developer',
     description:
       'Developed a fully responsive e-commerce website from scratch, leading to a 40% increase in user engagement.',
-    imageUrl: 'https://picsum.photos/600/400?random=1',
+    imageUrl: 'https://picsum.photos/seed/e-commerce/600/400',
     imageHint: 'online store',
     githubUrl: '#',
     liveUrl: '#',
@@ -19,9 +19,10 @@ const projectsData = [
     role: 'Core Contributor',
     description:
       'Contributed to a popular open-source component library, focusing on accessibility and performance improvements.',
-    imageUrl: 'https://picsum.photos/600/400?random=2',
+    imageUrl: 'https://picsum.photos/seed/ui-library/600/400',
     imageHint: 'code library',
     githubUrl: '#',
+    liveUrl: '#',
     tech: ['ReactJS', 'TypeScript', 'Storybook'],
     objectives: 'Grow the contributor community and increase library adoption by developers.',
     projectType: 'open-source project',
@@ -31,8 +32,9 @@ const projectsData = [
     role: 'Frontend Engineer',
     description:
       'Built an internal dashboard for the marketing team to track campaign performance and user metrics in real-time.',
-    imageUrl: 'https://picsum.photos/600/400?random=3',
+    imageUrl: 'https://picsum.photos/seed/dashboard/600/400',
     imageHint: 'data dashboard',
+    githubUrl: '#',
     liveUrl: '#',
     tech: ['ReactJS', 'D3.js', 'Redux'],
     objectives: 'Provide actionable insights to the marketing team to optimize ad spend and strategy.',
