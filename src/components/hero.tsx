@@ -26,16 +26,10 @@ export default function Hero() {
               Sanskar Bhadani
             </h1>
             <p className="max-w-lg mx-auto text-lg text-center text-muted-foreground md:text-left md:mx-0">
-              I&apos;m a passionate full-stack developer with a knack for creating dynamic,
-              user-friendly web experiences. I thrive on turning complex problems into beautiful,
-              intuitive, and practical solutions. With hands-on experience in modern frontend and
-              backend technologies, I design and build scalable applications, robust systems, and
-              AI-driven features that enhance user experiences. Beyond coding, I am deeply
-              interested in generative AI and its potential to create intelligent, adaptive
-              solutions. I bring strong leadership, management, and collaboration skills to every
-              project, ensuring effective teamwork and real-world impact. Whether it’s a hackathon
-              challenge or a production-ready application, I focus on innovation, usability, and
-              delivering results that make a difference.
+              I’m a full-stack developer passionate about building scalable, user-friendly
+              applications and exploring generative AI. I turn complex problems into intuitive
+              solutions, combining modern technologies with creativity, leadership, and practical
+              impact.
             </p>
             <p className="text-xl font-semibold text-center text-primary md:text-left">
               Software Engineer at Innovate LLC
