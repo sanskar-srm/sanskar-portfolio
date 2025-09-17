@@ -8,14 +8,14 @@ export default function Hero() {
       <div className="container mx-auto">
         <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
           <div className="flex justify-center md:justify-end image-wrapper-3d md:order-2">
-            <div className="relative">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
               <div className="absolute inset-0 border-4 rounded-full border-primary/50 shadow-lg accent-glow"></div>
               <Image
                 src="/profile.jpg"
                 alt="Profile photo"
-                width={400}
-                height={400}
+                fill
                 className="object-cover rounded-full floating-image"
+                sizes="(max-width: 768px) 256px, 384px"
                 data-ai-hint="professional headshot"
                 priority
               />
