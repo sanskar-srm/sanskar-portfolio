@@ -65,7 +65,7 @@ export default function Contact() {
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="rounded-full">
-                  <a href="https://www.instagram.com/your-instagram-profile" aria-label="Instagram">
+                  <a href="https://www.instagram.com/sanskarbhadani08" aria-label="Instagram">
                     <Instagram className="w-5 h-5" />
                   </a>
                 </Button>
