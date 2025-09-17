@@ -49,17 +49,17 @@ export default function Contact() {
               </p>
               <div className="flex space-x-4">
                 <Button asChild variant="outline" size="icon" className="rounded-full">
-                  <a href="mailto:your.email@example.com" aria-label="Email">
+                  <a href="mailto:sanskarbhadani0810@gmail.com" aria-label="Email">
                     <Mail className="w-5 h-5" />
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="rounded-full">
-                  <a href="#" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/in/sanskar-bhadani-1b48591a0/" aria-label="LinkedIn">
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="rounded-full">
-                  <a href="#" aria-label="GitHub">
+                  <a href="https://github.com/SanskarBhadani" aria-label="GitHub">
                     <Github className="w-5 h-5" />
                   </a>
                 </Button>

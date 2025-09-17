@@ -33,7 +33,7 @@ const sendEmailFlow = ai.defineFlow(
     try {
       await resend.emails.send({
         from: 'onboarding@resend.dev', // This should be a configured domain in Resend
-        to: 'your.email@example.com', // Replace with your actual email
+        to: 'sanskarbhadani0810@gmail.com', // Replace with your actual email
         subject: `Message from ${input.name} via Portfolio`,
         html: `<p>Name: ${input.name}</p><p>Email: ${input.email}</p><p>Message: ${input.message}</p>`,
       });
