@@ -40,7 +40,7 @@ export default function Contact() {
         <h2 className="text-3xl font-bold text-center md:text-4xl font-headline mb-12 text-glow">
           Get In Touch
         </h2>
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
             <div className="space-y-6">
               <p className="text-muted-foreground text-center md:text-left">
