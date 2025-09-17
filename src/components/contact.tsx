@@ -6,17 +6,33 @@ import {Textarea} from '@/components/ui/textarea';
 import {useToast} from '@/hooks/use-toast';
 import {Github, Linkedin, Mail} from 'lucide-react';
 import type React from 'react';
+import { sendEmailAction } from '@/app/actions';
 
 export default function Contact() {
   const {toast} = useToast();
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
     const form = e.target as HTMLFormElement;
-    form.reset();
+    const formData = new FormData(form);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+
+    const result = await sendEmailAction({ name, email, message });
+
+    if (result.success) {
+      toast({
+        title: 'Message Sent!',
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+      form.reset();
+    } else {
+      toast({
+        title: 'Error',
+        description: result.error,
+        variant: 'destructive',
+      });
+    }
   };
   return (
     <section id="contact" className="py-20 sm:py-28">
@@ -52,15 +68,15 @@ export default function Contact() {
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Your Name" required />
+                <Input id="name" name="name" placeholder="Your Name" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="your.email@example.com" required />
+                <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Your message..." required />
+                <Textarea id="message" name="message" placeholder="Your message..." required />
               </div>
               <Button type="submit" className="w-full accent-glow">
                 Send Message
