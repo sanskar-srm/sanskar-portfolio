@@ -6,8 +6,8 @@ const projectsData = [
     role: 'Lead Frontend Developer',
     description:
       'A feature-rich, responsive web application for appointment booking and scheduling, designed with a clean and intuitive interface. The platform allows users to easily view available slots, book appointments through a calendar-based system, and manage their schedules effortlessly.',
-    imageUrl: 'https://picsum.photos/seed/e-commerce/600/400',
-    imageHint: 'online store',
+    imageUrl: '/schedura-logo.png',
+    imageHint: 'scheduling app',
     githubUrl: '#',
     liveUrl: 'https://schedura-new.vercel.app/',
     tech: ['ReactJS', 'Node.js', 'MongoDB', 'TailwindCSS'],
