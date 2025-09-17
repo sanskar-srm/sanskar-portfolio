@@ -4,18 +4,18 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section id="about" className="py-24 sm:py-32 md:py-40">
+    <section id="about" className="pt-32 pb-24 sm:pt-40 sm:pb-32 md:pt-48 md:pb-40">
       <div className="container mx-auto">
         <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
-          <div className="flex justify-center md:justify-end image-wrapper-3d md:order-2">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
+          <div className="flex justify-center md:order-2 md:justify-end image-wrapper-3d">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80">
               <div className="absolute inset-0 border-4 rounded-full border-primary/50 shadow-lg accent-glow"></div>
               <Image
                 src="/profile.jpg"
                 alt="Profile photo"
                 fill
                 className="object-cover rounded-full floating-image"
-                sizes="(max-width: 768px) 256px, 384px"
+                sizes="(max-width: 768px) 256px, 320px"
                 data-ai-hint="professional headshot"
                 priority
               />
@@ -26,8 +26,16 @@ export default function Hero() {
               Sanskar Bhadani
             </h1>
             <p className="max-w-lg mx-auto text-lg text-center text-muted-foreground md:text-left md:mx-0">
-              I&apos;m a passionate developer with a knack for creating dynamic, user-friendly web
-              experiences. I thrive on turning complex problems into beautiful, intuitive designs.
+              I&apos;m a passionate full-stack developer with a knack for creating dynamic,
+              user-friendly web experiences. I thrive on turning complex problems into beautiful,
+              intuitive, and practical solutions. With hands-on experience in modern frontend and
+              backend technologies, I design and build scalable applications, robust systems, and
+              AI-driven features that enhance user experiences. Beyond coding, I am deeply
+              interested in generative AI and its potential to create intelligent, adaptive
+              solutions. I bring strong leadership, management, and collaboration skills to every
+              project, ensuring effective teamwork and real-world impact. Whether it’s a hackathon
+              challenge or a production-ready application, I focus on innovation, usability, and
+              delivering results that make a difference.
             </p>
             <p className="text-xl font-semibold text-center text-primary md:text-left">
               Software Engineer at Innovate LLC
