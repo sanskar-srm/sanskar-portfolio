@@ -4,9 +4,9 @@ import {Award, ExternalLink, Trophy, Calendar, BookOpen} from 'lucide-react';
 
 const hackathonData = [
   {
-    title: 'Global AI Hackathon 2023',
-    issuer: 'AI Innovators',
-    award: '1st Place Winner',
+    title: 'Global AI Buildathon',
+    issuer: 'Girls Leading Tech',
+    award: 'Participation',
     url: '#',
   },
   {
