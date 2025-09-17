@@ -32,7 +32,7 @@ export default function Hero() {
               impact.
             </p>
             <p className="text-xl font-semibold text-center text-primary md:text-left">
-              Software Engineer at Innovate LLC
+              Software Engineer
             </p>
             <div className="flex justify-center gap-4 md:justify-start">
               <Button asChild size="lg" className="accent-glow">
