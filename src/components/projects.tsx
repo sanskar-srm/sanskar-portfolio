@@ -10,7 +10,7 @@ const projectsData = [
     imageHint: 'online store',
     githubUrl: '#',
     liveUrl: '#',
-    tech: ['ReactJS', 'Node.js', 'MySQL', 'TailwindCSS'],
+    tech: ['ReactJS', 'Node.js', 'MongoDB', 'TailwindCSS'],
     objectives: 'Increase online sales and improve user experience for a retail client.',
     projectType: 'e-commerce implementation',
   },
