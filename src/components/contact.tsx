@@ -43,11 +43,11 @@ export default function Contact() {
         <div className="max-w-3xl mx-auto">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
             <div className="space-y-6">
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-center md:text-left">
                 Have a project in mind or just want to say hi? Feel free to reach out. I&apos;m
                 always open to discussing new opportunities and collaborations.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex justify-center md:justify-start space-x-4">
                 <Button asChild variant="outline" size="icon" className="rounded-full">
                   <a href="mailto:sanskarbhadani0810@gmail.com" aria-label="Email">
                     <Mail className="w-5 h-5" />
