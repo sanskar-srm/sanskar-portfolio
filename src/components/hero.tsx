@@ -14,7 +14,7 @@ export default function Hero() {
                 src="/pp.jpg"
                 alt="Profile photo"
                 fill
-                className="object-cover rounded-full floating-image"
+                className="object-cover rounded-full"
                 sizes="(max-width: 768px) 256px, 320px"
                 data-ai-hint="professional headshot"
                 priority
