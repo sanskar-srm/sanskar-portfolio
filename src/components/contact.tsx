@@ -4,7 +4,7 @@ import {Input} from '@/components/ui/input';
 import {Label} from '@/components/ui/label';
 import {Textarea} from '@/components/ui/textarea';
 import {useToast} from '@/hooks/use-toast';
-import {Github, Linkedin, Mail} from 'lucide-react';
+import {Github, Linkedin, Mail, Instagram} from 'lucide-react';
 import type React from 'react';
 import { sendEmailAction } from '@/app/actions';
 
@@ -60,7 +60,13 @@ export default function Contact() {
                 </Button>
                 <Button asChild variant="outline" size="icon" className="rounded-full">
                   <a href="https://github.com/SanskarBhadani" aria-label="GitHub">
-                    <Github className="w-5 h-5" />
+                    <Github className="w-5 h
+-5" />
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="icon" className="rounded-full">
+                  <a href="https://www.instagram.com/your-instagram-profile" aria-label="Instagram">
+                    <Instagram className="w-5 h-5" />
                   </a>
                 </Button>
               </div>
