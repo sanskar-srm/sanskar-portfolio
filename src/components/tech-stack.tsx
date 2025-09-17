@@ -31,8 +31,8 @@ export default function TechStack() {
           <div className="flex w-max sliding-icons">
             {[...skills, ...skills].map((skill, index) => (
               <div key={`${skill.name}-${index}`} className="flex flex-col items-center gap-4 group mx-8">
-                <div className="flex items-center justify-center w-24 h-24 transition-all duration-300 border-2 rounded-full bg-card border-primary/20 group-hover:scale-110 group-hover:border-accent group-hover:accent-glow">
-                  <skill.icon className="w-12 h-12 text-primary group-hover:text-accent transition-colors duration-300" />
+                <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 transition-all duration-300 border-2 rounded-full bg-card border-primary/20 group-hover:scale-110 group-hover:border-accent group-hover:accent-glow">
+                  <skill.icon className="w-10 h-10 md:w-12 md:h-12 text-primary group-hover:text-accent transition-colors duration-300" />
                 </div>
                 <p className="font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                   {skill.name}
