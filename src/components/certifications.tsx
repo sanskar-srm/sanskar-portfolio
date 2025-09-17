@@ -32,7 +32,7 @@ const bootcampData = [
     title: 'Firebase Studio Bootcamp',
     issuer: 'Lets Upgrade',
     url: '#',
-    pdfUrl: '/bootcampCert/firebase.pdf',
+    imageUrl: '/bootcampCert/firebase.jpg',
   },
   {
     title: 'Solution Architecture Job Simulation',
@@ -157,25 +157,19 @@ export default function Certifications() {
                       </CardContent>
                     </Card>
                   </DialogTrigger>
-                  {(cert.imageUrl || cert.pdfUrl) && (
+                  {cert.imageUrl && (
                     <DialogContent className="max-w-4xl">
                       <DialogHeader>
                         <DialogTitle>{cert.title}</DialogTitle>
                       </DialogHeader>
-                      {cert.imageUrl ? (
-                        <div className="relative aspect-video w-full">
-                          <Image
-                            src={cert.imageUrl}
-                            alt={`${cert.title} Certificate`}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      ) : cert.pdfUrl ? (
-                        <div className="h-[80vh] w-full">
-                          <iframe src={cert.pdfUrl} className="w-full h-full border-0" title={`${cert.title} PDF`} />
-                        </div>
-                      ) : null}
+                      <div className="relative aspect-video w-full">
+                        <Image
+                          src={cert.imageUrl}
+                          alt={`${cert.title} Certificate`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                     </DialogContent>
                   )}
                 </Dialog>
