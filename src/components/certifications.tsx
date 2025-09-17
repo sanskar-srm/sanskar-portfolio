@@ -17,7 +17,7 @@ const hackathonData = [
     title: 'Global AI Buildathon 2025',
     issuer: 'Girls Leading Tech',
     award: 'Participation',
-    imageUrl: '/hackathonCert/global-ai-buildathon-cert.png',
+    imageUrl: '/hackathonCert/buildathon.jpg',
   },
   {
     title: 'Web3 & Blockchain Hackfest',
