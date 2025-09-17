@@ -14,7 +14,7 @@ import Image from 'next/image';
 
 const hackathonData = [
   {
-    title: 'Global AI Buildathon',
+    title: 'Global AI Buildathon 2025',
     issuer: 'Girls Leading Tech',
     award: 'Participation',
     imageUrl: '/global-ai-buildathon-cert.png',
