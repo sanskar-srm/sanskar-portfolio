@@ -142,7 +142,6 @@ export default function Certifications() {
                               <a
                                 href={cert.url}
                                 target="_blank"
-
                                 rel="noopener noreferrer"
                                 onClick={e => e.stopPropagation()}
                               >
@@ -164,7 +163,7 @@ export default function Certifications() {
                         <DialogTitle>{cert.title}</DialogTitle>
                       </DialogHeader>
                       {cert.imageUrl ? (
-                        <div className="relative aspect-[1.414/1] w-full">
+                        <div className="relative aspect-[1.414/1] w-full h-full">
                           <Image
                             src={cert.imageUrl}
                             alt={`${cert.title} Certificate`}
@@ -173,7 +172,7 @@ export default function Certifications() {
                           />
                         </div>
                       ) : cert.pdfUrl ? (
-                        <iframe src={cert.pdfUrl} className="w-full h-full" />
+                        <iframe src={cert.pdfUrl} className="w-full h-full border-0" title={`${cert.title} PDF`} />
                       ) : null}
                     </DialogContent>
                   )}
