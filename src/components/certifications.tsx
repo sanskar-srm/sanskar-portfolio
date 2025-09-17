@@ -29,10 +29,10 @@ const hackathonData = [
 
 const bootcampData = [
   {
-    title: 'Full-Stack Developer Bootcamp',
-    issuer: 'Dev Academy',
+    title: 'Google Cloud Skills Boost',
+    issuer: 'Google',
     url: '#',
-    pdfUrl: '/bootcampCert/full-stack-cert.pdf',
+    pdfUrl: '/bootcampCert/firebase.pdf',
   },
   {
     title: 'Cybersecurity Summit 2022',
@@ -142,6 +142,7 @@ export default function Certifications() {
                               <a
                                 href={cert.url}
                                 target="_blank"
+
                                 rel="noopener noreferrer"
                                 onClick={e => e.stopPropagation()}
                               >
