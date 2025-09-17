@@ -30,7 +30,7 @@ const hackathonData = [
 const bootcampData = [
   {
     title: 'Firebase Studio Bootcamp',
-    issuer: 'Google',
+    issuer: 'Lets Upgrade',
     url: '#',
     pdfUrl: '/bootcampCert/firebase.pdf',
   },
