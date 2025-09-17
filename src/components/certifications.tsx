@@ -32,11 +32,13 @@ const bootcampData = [
     title: 'Full-Stack Developer Bootcamp',
     issuer: 'Dev Academy',
     url: '#',
+    pdfUrl: '/bootcampCert/full-stack-cert.pdf',
   },
   {
     title: 'Cybersecurity Summit 2022',
     issuer: 'SecureNet',
     url: '#',
+    imageUrl: '/bootcampCert/cybersecurity-cert.png',
   },
 ];
 
@@ -123,31 +125,58 @@ export default function Certifications() {
 
           {/* Bootcamps and Events Section */}
           <div>
-            <h3 className="flex items-center justify-center text-2xl font-semibold text-center font-headline mb-8 text-primary">
+            <h3 className="flex items-center justify-center text-2xl font-semibold text-center font.headline mb-8 text-primary">
               <Calendar className="w-6 h-6 mr-3" />
               Bootcamps and Events
             </h3>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {bootcampData.map(cert => (
-                <Card
-                  key={cert.title}
-                  className="transition-colors duration-300 border-primary/20 bg-card/50 backdrop-blur-sm hover:border-primary/50"
-                >
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <Award className="w-8 h-8 text-primary" />
-                      <Button asChild variant="ghost" size="icon">
-                        <a href={cert.url} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <h4 className="text-lg font-bold font-headline">{cert.title}</h4>
-                    <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                  </CardContent>
-                </Card>
+                <Dialog key={cert.title}>
+                  <DialogTrigger asChild>
+                    <Card className="transition-colors duration-300 border-primary/20 bg-card/50 backdrop-blur-sm hover:border-primary/50 cursor-pointer">
+                      <CardHeader>
+                        <div className="flex items-start justify-between">
+                          <Award className="w-8 h-8 text-primary" />
+                          {cert.url && (
+                            <Button asChild variant="ghost" size="icon">
+                              <a
+                                href={cert.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={e => e.stopPropagation()}
+                              >
+                                <ExternalLink className="w-4 h-4" />
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <h4 className="text-lg font-bold font-headline">{cert.title}</h4>
+                        <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                      </CardContent>
+                    </Card>
+                  </DialogTrigger>
+                  {(cert.imageUrl || cert.pdfUrl) && (
+                    <DialogContent className="max-w-4xl h-[90vh]">
+                      <DialogHeader>
+                        <DialogTitle>{cert.title}</DialogTitle>
+                      </DialogHeader>
+                      {cert.imageUrl ? (
+                        <div className="relative aspect-[1.414/1] w-full">
+                          <Image
+                            src={cert.imageUrl}
+                            alt={`${cert.title} Certificate`}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      ) : cert.pdfUrl ? (
+                        <iframe src={cert.pdfUrl} className="w-full h-full" />
+                      ) : null}
+                    </DialogContent>
+                  )}
+                </Dialog>
               ))}
             </div>
           </div>
