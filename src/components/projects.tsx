@@ -19,7 +19,7 @@ const projectsData = [
     role: 'Core Developer',
     description:
       'Railमित्र is a conceptual web application I built to simplify access to reliable train information in India. What began as a learning project soon grew into a complete platform, showcasing my ability to design user-friendly, impactful solutions. While it remains a project, Railमित्र reflects my passion for technology, problem-solving, and building tools that address real-world challenges.',
-    imageUrl: 'https://picsum.photos/seed/railmitra/600/400',
+    imageUrl: '/projectCover/railMitra.jpg',
     imageHint: 'train app',
     githubUrl: '#',
     liveUrl: '#',
