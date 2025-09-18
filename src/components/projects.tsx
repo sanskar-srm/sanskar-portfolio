@@ -23,7 +23,7 @@ const projectsData = [
     imageHint: 'train app',
     githubUrl: '#',
     liveUrl: '#',
-    tech: ['ReactJS', 'TypeScript', 'Storybook'],
+    tech: ['ReactJS', 'TypeScript', 'Storybook', 'TailwindCSS', 'Node.js', 'Express.js', 'Firebase', 'IR APIs'],
     objectives: 'Grow the contributor community and increase library adoption by developers.',
     projectType: 'open-source project',
   },
