@@ -32,7 +32,7 @@ const projectsData = [
     role: 'Frontend Engineer',
     description:
       'Built an internal dashboard for the marketing team to track campaign performance and user metrics in real-time.',
-    imageUrl: '/projectCover/railMitra.jpg',
+    imageUrl: '/projectCover/NrailMitra.jpg',
     imageHint: 'data dashboard',
     githubUrl: '#',
     liveUrl: '#',
