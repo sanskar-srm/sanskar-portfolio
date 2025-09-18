@@ -1,3 +1,4 @@
+'use client';
 import {ProjectCard} from '@/components/project-card';
 
 const projectsData = [
@@ -28,16 +29,17 @@ const projectsData = [
     projectType: 'open-source project',
   },
   {
-    title: 'Marketing Analytics Dashboard',
+    title: 'BiasGuard',
     role: 'Frontend Engineer',
     description:
-      'Built an internal dashboard for the marketing team to track campaign performance and user metrics in real-time.',
+      'BiasGuard is a conceptual hackathon project I built to promote equity and inclusivity in workplaces. What started as an experimental idea during a hackathon quickly evolved into a platform that scans job postings, workplace communication, and conversations for bias, providing actionable alternatives. While it remains a project, BiasGuard reflects my drive to leverage technology for creating fair, respectful, and impactful work environments.',
     imageUrl: '/projectCover/biasGuard.jpg',
     imageHint: 'data dashboard',
     githubUrl: '#',
     liveUrl: '#',
     tech: ['ReactJS', 'D3.js', 'Redux'],
-    objectives: 'Provide actionable insights to the marketing team to optimize ad spend and strategy.',
+    objectives:
+      'Provide actionable insights to the marketing team to optimize ad spend and strategy.',
     projectType: 'marketing site',
   },
 ];
