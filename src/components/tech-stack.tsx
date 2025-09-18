@@ -7,10 +7,12 @@ import {
   PythonIcon,
   ReactJsIcon,
   TailwindCssIcon,
+  TypeScriptIcon,
 } from '@/components/icons';
 
 const skills = [
   {name: 'ReactJS', icon: ReactJsIcon},
+  {name: 'TypeScript', icon: TypeScriptIcon},
   {name: 'TailwindCSS', icon: TailwindCssIcon},
   {name: 'Node.js', icon: NodeJsIcon},
   {name: 'MySQL', icon: MySqlIcon},
