@@ -7,8 +7,8 @@ export default function Hero() {
     <section id="about" className="pt-32 pb-24 sm:pt-40 sm:pb-32 md:pt-48 md:pb-40">
       <div className="container mx-auto">
         <div className="grid items-center grid-cols-1 gap-12 md:grid-cols-2">
-          <div className="flex justify-center md:order-2 md:justify-end image-wrapper-3d">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80">
+          <div className="flex justify-center md:order-2 md:justify-end">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 mt-8 md:mt-0">
               <div className="absolute inset-0 border-4 rounded-full border-primary/50 shadow-lg accent-glow"></div>
               <Image
                 src="/pp.jpg"
