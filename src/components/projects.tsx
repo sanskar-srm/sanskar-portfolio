@@ -39,7 +39,6 @@ const projectsData = [
     liveUrl: '#',
     tech: [
       'ReactJS',
-      'Redux',
       'TypeScript',
       'TailwindCSS',
       'Node.js',
