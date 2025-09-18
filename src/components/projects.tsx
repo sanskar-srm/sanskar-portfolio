@@ -30,7 +30,7 @@ const projectsData = [
   },
   {
     title: 'BiasGuard',
-    role: 'Frontend Engineer',
+    role: 'Hybrid Developer',
     description:
       'BiasGuard is a conceptual hackathon project I built to promote equity and inclusivity in workplaces. What started as an experimental idea during a hackathon quickly evolved into a platform that scans job postings, workplace communication, and conversations for bias, providing actionable alternatives. While it remains a project, BiasGuard reflects my drive to leverage technology for creating fair, respectful, and impactful work environments.',
     imageUrl: '/projectCover/biasGuard.jpg',
