@@ -1,5 +1,5 @@
-import {Button} from '@/components/ui/button';
-import {Download} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Download } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Hero() {
@@ -14,11 +14,12 @@ export default function Hero() {
                 src="/pp.jpg"
                 alt="Profile photo"
                 fill
-                className="object-cover rounded-full"
+                className="object-cover object-[center_7%] rounded-full"
                 sizes="(max-width: 768px) 256px, 320px"
                 data-ai-hint="professional headshot"
                 priority
               />
+
             </div>
           </div>
           <div className="space-y-6 md:order-1">

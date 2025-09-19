@@ -62,7 +62,7 @@ const projectsData = [
     projectType: 'marketing site',
   },
   {
-    title: 'Portfolio V1',
+    title: 'Uploading Soon',
     role: 'Solo Developer',
     description: 'My first portfolio website, built to showcase my initial projects and skills.',
     imageUrl: 'https://picsum.photos/seed/4/600/400',
