@@ -28,7 +28,7 @@ const hackathonData = [
     imageUrl: '/hackathonCert/buildathon.jpg',
   },
   {
-    title: 'Web3 & Blockchain Hackfest',
+    title: 'Ctrl + Space Hackathon',
     issuer: 'CryptoCoders',
     award: 'Best DApp Award',
     url: '#',
