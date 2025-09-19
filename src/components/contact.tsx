@@ -6,10 +6,13 @@ import {Textarea} from '@/components/ui/textarea';
 import {useToast} from '@/hooks/use-toast';
 import {Github, Linkedin, Mail, Instagram} from 'lucide-react';
 import type React from 'react';
-import { sendEmailAction } from '@/app/actions';
+import {sendEmailAction} from '@/app/actions';
+import {useScrollAnimation} from '@/hooks/use-scroll-animation';
 
 export default function Contact() {
   const {toast} = useToast();
+  const {ref, inView} = useScrollAnimation();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -18,7 +21,7 @@ export default function Contact() {
     const email = formData.get('email') as string;
     const message = formData.get('message') as string;
 
-    const result = await sendEmailAction({ name, email, message });
+    const result = await sendEmailAction({name, email, message});
 
     if (result.success) {
       toast({
@@ -36,7 +39,10 @@ export default function Contact() {
   };
   return (
     <section id="contact" className="py-20 sm:py-28">
-      <div className="container mx-auto">
+      <div
+        ref={ref}
+        className={`container mx-auto transition-opacity ${inView ? 'animate-down' : 'opacity-0'}`}
+      >
         <h2 className="text-3xl font-bold text-center md:text-4xl font-headline mb-12 text-glow">
           Get In Touch
         </h2>
@@ -54,7 +60,10 @@ export default function Contact() {
                   </a>
                 </Button>
                 <Button asChild variant="outline" size="icon" className="rounded-full">
-                  <a href="https://www.linkedin.com/in/sanskar-bhadani-1a4810290" aria-label="LinkedIn">
+                  <a
+                    href="https://www.linkedin.com/in/sanskar-bhadani-1a4810290"
+                    aria-label="LinkedIn"
+                  >
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </Button>
@@ -77,7 +86,13 @@ export default function Contact() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" placeholder="your.email@example.com" required />
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="your.email@example.com"
+                  required
+                />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
