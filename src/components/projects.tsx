@@ -1,6 +1,15 @@
 'use client';
 import {ProjectCard} from '@/components/project-card';
 import {useScrollAnimation} from '@/hooks/use-scroll-animation';
+import {useState} from 'react';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
+import {Button} from './ui/button';
+import {ChevronDown} from 'lucide-react';
+import {cn} from '@/lib/utils';
 
 const projectsData = [
   {
@@ -52,6 +61,18 @@ const projectsData = [
       'Provide actionable insights to the marketing team to optimize ad spend and strategy.',
     projectType: 'marketing site',
   },
+  {
+    title: 'Portfolio V1',
+    role: 'Solo Developer',
+    description: 'My first portfolio website, built to showcase my initial projects and skills.',
+    imageUrl: 'https://picsum.photos/seed/4/600/400',
+    imageHint: 'portfolio website',
+    githubUrl: '#',
+    liveUrl: '#',
+    tech: ['HTML', 'CSS', 'JavaScript'],
+    objectives: 'Learn web development fundamentals.',
+    projectType: 'personal project',
+  },
 ];
 
 const AnimatedProjectCard = ({
@@ -62,9 +83,7 @@ const AnimatedProjectCard = ({
   reverse: boolean;
 }) => {
   const {ref, inView} = useScrollAnimation();
-  const animationClass = reverse
-    ? 'animate-slide-in-right'
-    : 'animate-slide-in-left';
+  const animationClass = reverse ? 'animate-slide-in-right' : 'animate-slide-in-left';
 
   return (
     <div
@@ -79,21 +98,51 @@ const AnimatedProjectCard = ({
 };
 
 export default function Projects() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
   return (
     <section id="projects" className="py-20 sm:py-28">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-center md:text-4xl font-headline mb-12 text-glow">
           Featured Projects
         </h2>
-        <div className="space-y-24">
-          {projectsData.map((project, index) => (
-            <AnimatedProjectCard
-              key={project.title}
-              project={project}
-              reverse={index % 2 !== 0}
-            />
-          ))}
-        </div>
+        <Collapsible open={showAllProjects} onOpenChange={setShowAllProjects}>
+          <div className="space-y-24">
+            {projectsData.slice(0, 2).map((project, index) => (
+              <AnimatedProjectCard
+                key={project.title}
+                project={project}
+                reverse={index % 2 !== 0}
+              />
+            ))}
+          </div>
+
+          <CollapsibleContent className="space-y-24 mt-24">
+            {projectsData.slice(2).map((project, index) => (
+              <AnimatedProjectCard
+                key={project.title}
+                project={project}
+                reverse={(index + 2) % 2 !== 0}
+              />
+            ))}
+          </CollapsibleContent>
+
+          {projectsData.length > 2 && (
+            <div className="mt-16 text-center">
+              <CollapsibleTrigger asChild>
+                <Button variant="outline">
+                  {showAllProjects ? 'Show Less' : 'Show More'}
+                  <ChevronDown
+                    className={cn(
+                      'w-4 h-4 ml-2 transition-transform',
+                      showAllProjects && 'rotate-180'
+                    )}
+                  />
+                </Button>
+              </CollapsibleTrigger>
+            </div>
+          )}
+        </Collapsible>
       </div>
     </section>
   );
