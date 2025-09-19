@@ -29,7 +29,7 @@ const hackathonData = [
   },
   {
     title: 'Ctrl + Space Hackathon',
-    issuer: 'CryptoCoders',
+    issuer: 'NST ADYPU X LNMIIT JAIPUR',
     award: 'Best DApp Award',
     url: '#',
   },
