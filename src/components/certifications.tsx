@@ -69,8 +69,8 @@ const bootcampData = [
 
 const coursesData = [
   {
-    title: 'Certified Frontend Developer',
-    issuer: 'Pro Certs Inc.',
+    title: 'Advanced React JS Frontend',
+    issuer: 'by Udemy',
     url: '#',
     imageUrl: '/courseCert/react.jpg',
   },
@@ -469,3 +469,5 @@ export default function Certifications() {
     </section>
   );
 }
+
+    
