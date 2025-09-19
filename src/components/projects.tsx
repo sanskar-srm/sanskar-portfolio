@@ -108,7 +108,7 @@ export default function Projects() {
         </h2>
         <Collapsible open={showAllProjects} onOpenChange={setShowAllProjects}>
           <div className="space-y-24">
-            {projectsData.slice(0, 2).map((project, index) => (
+            {projectsData.slice(0, 3).map((project, index) => (
               <AnimatedProjectCard
                 key={project.title}
                 project={project}
@@ -118,16 +118,16 @@ export default function Projects() {
           </div>
 
           <CollapsibleContent className="space-y-24 mt-24">
-            {projectsData.slice(2).map((project, index) => (
+            {projectsData.slice(3).map((project, index) => (
               <AnimatedProjectCard
                 key={project.title}
                 project={project}
-                reverse={(index + 2) % 2 !== 0}
+                reverse={(index + 3) % 2 !== 0}
               />
             ))}
           </CollapsibleContent>
 
-          {projectsData.length > 2 && (
+          {projectsData.length > 3 && (
             <div className="mt-16 text-center">
               <CollapsibleTrigger asChild>
                 <Button variant="outline">
