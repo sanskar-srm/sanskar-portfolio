@@ -23,7 +23,7 @@ export default function Home() {
         <Contact />
       </main>
       <footer className="relative z-10 py-10 text-center text-sm text-muted-foreground">
-        <p>&copy; {new Date().getFullYear()} Made with ❤️ by Sanskar. All rights reserved.</p>
+        <p>Made with ❤️ by Sanskar.</p>
       </footer>
     </>
   );
