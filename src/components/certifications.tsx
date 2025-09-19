@@ -30,7 +30,7 @@ const hackathonData = [
   {
     title: 'Ctrl + Space Hackathon',
     issuer: 'NST ADYPU X LNMIIT JAIPUR',
-    award: 'Best DApp Award',
+    award: 'Qualified for Phase 2',
     url: '#',
   },
   {
@@ -445,3 +445,5 @@ export default function Certifications() {
     </section>
   );
 }
+
+    
