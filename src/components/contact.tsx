@@ -54,12 +54,22 @@ export default function Contact() {
                 always open to discussing new opportunities and collaborations.
               </p>
               <div className="flex justify-center md:justify-start space-x-4">
-                <Button asChild variant="outline" size="icon" className="rounded-full">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full transition-transform hover:scale-110"
+                >
                   <a href="mailto:sanskarbhadani0810@gmail.com" aria-label="Email">
                     <Mail className="w-5 h-5" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="icon" className="rounded-full">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full transition-transform hover:scale-110"
+                >
                   <a
                     href="https://www.linkedin.com/in/sanskar-bhadani-1a4810290"
                     aria-label="LinkedIn"
@@ -67,12 +77,22 @@ export default function Contact() {
                     <Linkedin className="w-5 h-5" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="icon" className="rounded-full">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full transition-transform hover:scale-110"
+                >
                   <a href="https://github.com/sanskar-srm" aria-label="GitHub">
                     <Github className="w-5 h-5" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="icon" className="rounded-full">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="icon"
+                  className="rounded-full transition-transform hover:scale-110"
+                >
                   <a href="https://www.instagram.com/sanskarbhadani08" aria-label="Instagram">
                     <Instagram className="w-5 h-5" />
                   </a>
