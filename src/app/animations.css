@@ -15,7 +15,7 @@
   animation: scroll-left 40s linear infinite;
 }
 
-@keyframes-down {
+@keyframes keyframes-down {
   from {
     transform: translateY(-50px);
     opacity: 0;
