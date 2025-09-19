@@ -1,5 +1,6 @@
 'use client';
 import {ProjectCard} from '@/components/project-card';
+import {useScrollAnimation} from '@/hooks/use-scroll-animation';
 
 const projectsData = [
   {
@@ -19,7 +20,7 @@ const projectsData = [
     title: 'Railमित्र',
     role: 'Core Developer',
     description:
-      'Railमित्र is a conceptual web application I built to simplify access to reliable train information in India. What began as a learning project soon grew into a complete platform, showcasing my ability to design user-friendly, impactful solutions. While it remains a project, Railमित्र reflects my passion for technology, problem-solving, and building tools that address real-world challenges.',
+      'Railमित्र is a conceptual web application I built to simplify access to reliable train information in India. What began as a learning project soon grew into a complete platform, showcasing my ability to design user-friendly, impactful solutions. While it remains a project, Railमित्र reflects my passion for technology, problem-solving, and building tools that addresses real-world challenges.',
     imageUrl: '/projectCover/railMitra.jpg',
     imageHint: 'train app',
     githubUrl: 'https://github.com/sanskar-srm/RailMitra',
@@ -53,6 +54,30 @@ const projectsData = [
   },
 ];
 
+const AnimatedProjectCard = ({
+  project,
+  reverse,
+}: {
+  project: (typeof projectsData)[0];
+  reverse: boolean;
+}) => {
+  const {ref, inView} = useScrollAnimation();
+  const animationClass = reverse
+    ? 'animate-slide-in-right'
+    : 'animate-slide-in-left';
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-opacity duration-700 ${
+        inView ? `opacity-100 ${animationClass}` : 'opacity-0'
+      }`}
+    >
+      <ProjectCard project={project} reverse={reverse} />
+    </div>
+  );
+};
+
 export default function Projects() {
   return (
     <section id="projects" className="py-20 sm:py-28">
@@ -62,7 +87,11 @@ export default function Projects() {
         </h2>
         <div className="space-y-24">
           {projectsData.map((project, index) => (
-            <ProjectCard key={project.title} project={project} reverse={index % 2 !== 0} />
+            <AnimatedProjectCard
+              key={project.title}
+              project={project}
+              reverse={index % 2 !== 0}
+            />
           ))}
         </div>
       </div>
