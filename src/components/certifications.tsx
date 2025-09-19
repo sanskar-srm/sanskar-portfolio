@@ -70,7 +70,7 @@ const bootcampData = [
 const coursesData = [
   {
     title: 'Advanced React JS Frontend',
-    issuer: 'by Udemy',
+    issuer: 'Udemy',
     url: '#',
     imageUrl: '/courseCert/react.jpg',
   },
@@ -469,5 +469,3 @@ export default function Certifications() {
     </section>
   );
 }
-
-    
