@@ -72,7 +72,7 @@ const coursesData = [
     title: 'Certified Frontend Developer',
     issuer: 'Pro Certs Inc.',
     url: '#',
-    imageUrl: '/coursesCert/react.jpg',
+    imageUrl: '/courseCert/react.jpg',
   },
   {
     title: 'Advanced React Specialist',
