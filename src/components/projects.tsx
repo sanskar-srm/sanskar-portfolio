@@ -64,7 +64,7 @@ const projectsData = [
   {
     title: 'Uploading Soon',
     role: 'Solo Developer',
-    description: 'My first portfolio website, built to showcase my initial projects and skills.',
+    description: 'uploading soon',
     imageUrl: 'https://picsum.photos/seed/4/600/400',
     imageHint: 'portfolio website',
     githubUrl: '#',
