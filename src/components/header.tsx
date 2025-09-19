@@ -13,11 +13,23 @@ const navLinks = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
+
+      const sections = navLinks.map(link => document.getElementById(link.href.substring(1)));
+      let currentSection = 'about';
+
+      for (const section of sections) {
+        if (section && section.getBoundingClientRect().top < window.innerHeight / 2) {
+          currentSection = section.id;
+        }
+      }
+      setActiveSection(currentSection);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -36,7 +48,12 @@ export default function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium rounded-md text-foreground hover:text-accent hover:text-glow-accent transition-all"
+                className={cn(
+                  'px-3 py-2 text-sm font-medium rounded-md transition-all',
+                  activeSection === link.href.substring(1)
+                    ? 'text-accent text-glow-accent'
+                    : 'text-foreground hover:text-accent hover:text-glow-accent'
+                )}
               >
                 {link.name}
               </a>
