@@ -80,8 +80,8 @@ const coursesData = [
     url: '#',
   },
   {
-    title: 'Full-Stack Web Development',
-    issuer: 'Code Academy',
+    title: 'Web Development',
+    issuer: 'Udemy',
     url: '#',
     imageUrl: '/courseCert/WebDev.jpg',
   },
