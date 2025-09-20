@@ -59,3 +59,25 @@
 .animate-slide-in-right {
   animation: slide-in-right 0.7s ease-out forwards;
 }
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: hsl(var(--primary));
+  }
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 1px;
+  margin-left: 2px;
+  border-right: 3px solid hsl(var(--primary));
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+.typing-cursor.blink {
+   animation: blink-caret 0.75s step-end infinite;
+}
