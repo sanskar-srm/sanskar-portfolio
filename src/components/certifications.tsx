@@ -72,6 +72,7 @@ const coursesData = [
     title: 'Advanced React Specialist',
     issuer: 'React University',
     url: '#',
+    imageUrl: '/courseCert/OCIai.jpg',
   },
   {
     title: 'Advanced React JS Frontend',
