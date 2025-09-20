@@ -24,7 +24,7 @@ export default function TypingAnimation({text, className}: TypingAnimationProps)
         clearInterval(intervalId);
         setIsTyping(false);
       }
-    }, 40); 
+    }, 20); 
 
     return () => clearInterval(intervalId);
   }, [text]);
