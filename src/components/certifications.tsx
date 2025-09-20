@@ -61,8 +61,8 @@ const bootcampData = [
     imageUrl: '/bootcampCert/AWS.jpg',
   },
   {
-    title: 'Advanced Cloud Engineering',
-    issuer: 'Cloud Gurus',
+    title: 'Android Development Workshop',
+    issuer: 'Appirates - SRM University',
     url: '#',
   },
 ];
