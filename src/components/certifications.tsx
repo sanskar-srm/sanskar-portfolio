@@ -69,8 +69,8 @@ const bootcampData = [
 
 const coursesData = [
   {
-    title: 'Advanced React Specialist',
-    issuer: 'React University',
+    title: 'OCI AI Foundations Associate',
+    issuer: 'Oracle',
     url: '#',
     imageUrl: '/courseCert/OCIai.jpg',
   },
@@ -406,3 +406,5 @@ export default function Certifications() {
     </section>
   );
 }
+
+    
