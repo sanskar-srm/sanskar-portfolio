@@ -137,18 +137,6 @@ export default function Certifications() {
                           <CardHeader>
                             <div className="flex items-start justify-between">
                               <Award className="w-8 h-8 text-primary" />
-                              {cert.url && (
-                                <Button asChild variant="ghost" size="icon">
-                                  <a
-                                    href={cert.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={e => e.stopPropagation()}
-                                  >
-                                    <ExternalLink className="w-4 h-4" />
-                                  </a>
-                                </Button>
-                              )}
                             </div>
                           </CardHeader>
                           <CardContent>
@@ -187,18 +175,6 @@ export default function Certifications() {
                           <CardHeader>
                             <div className="flex items-start justify-between">
                               <Award className="w-8 h-8 text-primary" />
-                              {cert.url && (
-                                <Button asChild variant="ghost" size="icon">
-                                  <a
-                                    href={cert.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={e => e.stopPropagation()}
-                                  >
-                                    <ExternalLink className="w-4 h-4" />
-                                  </a>
-                                </Button>
-                              )}
                             </div>
                           </CardHeader>
                           <CardContent>
@@ -262,18 +238,6 @@ export default function Certifications() {
                           <CardHeader>
                             <div className="flex items-start justify-between">
                               <Award className="w-8 h-8 text-primary" />
-                              {cert.url && (
-                                <Button asChild variant="ghost" size="icon">
-                                  <a
-                                    href={cert.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={e => e.stopPropagation()}
-                                  >
-                                    <ExternalLink className="w-4 h-4" />
-                                  </a>
-                                </Button>
-                              )}
                             </div>
                           </CardHeader>
                           <CardContent>
@@ -310,18 +274,6 @@ export default function Certifications() {
                           <CardHeader>
                             <div className="flex items-start justify-between">
                               <Award className="w-8 h-8 text-primary" />
-                              {cert.url && (
-                                <Button asChild variant="ghost" size="icon">
-                                  <a
-                                    href={cert.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={e => e.stopPropagation()}
-                                  >
-                                    <ExternalLink className="w-4 h-4" />
-                                  </a>
-                                </Button>
-                              )}
                             </div>
                           </CardHeader>
                           <CardContent>
@@ -383,18 +335,6 @@ export default function Certifications() {
                           <CardHeader>
                             <div className="flex items-start justify-between">
                               <Award className="w-8 h-8 text-primary" />
-                              {cert.url && (
-                                <Button asChild variant="ghost" size="icon">
-                                  <a
-                                    href={cert.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={e => e.stopPropagation()}
-                                  >
-                                    <ExternalLink className="w-4 h-4" />
-                                  </a>
-                                </Button>
-                              )}
                             </div>
                           </CardHeader>
                           <CardContent>
@@ -432,11 +372,6 @@ export default function Certifications() {
                       <CardHeader>
                         <div className="flex items-start justify-between">
                           <Award className="w-8 h-8 text-primary" />
-                          <Button asChild variant="ghost" size="icon">
-                            <a href={cert.url} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="w-4 h-4" />
-                            </a>
-                          </Button>
                         </div>
                       </CardHeader>
                       <CardContent>
