@@ -3,6 +3,7 @@ import {
   FirebaseIcon,
   JavaIcon,
   MySqlIcon,
+  NextJsIcon,
   NodeJsIcon,
   PythonIcon,
   ReactJsIcon,
@@ -11,6 +12,7 @@ import {
 } from '@/components/icons';
 
 const skills = [
+  {name: 'Next.js', icon: NextJsIcon},
   {name: 'ReactJS', icon: ReactJsIcon},
   {name: 'TypeScript', icon: TypeScriptIcon},
   {name: 'TailwindCSS', icon: TailwindCssIcon},
@@ -47,3 +49,5 @@ export default function TechStack() {
     </section>
   );
 }
+
+    
