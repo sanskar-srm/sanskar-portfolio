@@ -2,7 +2,7 @@
 
 import {cn} from '@/lib/utils';
 import type React from 'react';
-import {useCallback, useEffect, useRef} from 'react';
+import {useEffect, useRef} from 'react';
 
 interface InteractiveBackgroundProps {
   className?: string;
@@ -12,35 +12,35 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouse = useRef({x: -1000, y: -1000});
 
-  const handleMouseMove = useCallback((event: MouseEvent) => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect();
-      mouse.current.x = event.clientX - rect.left;
-      mouse.current.y = event.clientY - rect.top;
-    }
-  }, []);
-
-  const handleTouchMove = useCallback((event: TouchEvent) => {
-    if (canvasRef.current && event.touches.length > 0) {
-      const rect = canvasRef.current.getBoundingClientRect();
-      mouse.current.x = event.touches[0].clientX - rect.left;
-      mouse.current.y = event.touches[0].clientY - rect.top;
-    }
-  }, []);
-
-  const handleMouseOut = useCallback(() => {
-    mouse.current = { x: -1000, y: -1000 };
-  }, []);
-
-  const handleTouchEnd = useCallback(() => {
-    mouse.current = { x: -1000, y: -1000 };
-  }, []);
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+
+    const handleMouseMove = (event: MouseEvent) => {
+      if (canvasRef.current) {
+        const rect = canvasRef.current.getBoundingClientRect();
+        mouse.current.x = event.clientX - rect.left;
+        mouse.current.y = event.clientY - rect.top;
+      }
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (canvasRef.current && event.touches.length > 0) {
+        const rect = canvasRef.current.getBoundingClientRect();
+        mouse.current.x = event.touches[0].clientX - rect.left;
+        mouse.current.y = event.touches[0].clientY - rect.top;
+      }
+    };
+
+    const handleMouseOut = () => {
+      mouse.current = {x: -1000, y: -1000};
+    };
+
+    const handleTouchEnd = () => {
+      mouse.current = {x: -1000, y: -1000};
+    };
 
     let animationFrameId: number;
     let particles: Particle[] = [];
@@ -92,15 +92,15 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
           this.x -= directionX;
           this.y -= directionY;
         } else {
-            // Default movement
-            if (this.x > canvas.width || this.x < 0) {
-                this.speedX = -this.speedX;
-            }
-            if (this.y > canvas.height || this.y < 0) {
-                this.speedY = -this.speedY;
-            }
-            this.x += this.speedX;
-            this.y += this.speedY;
+          // Default movement
+          if (this.x > canvas.width || this.x < 0) {
+            this.speedX = -this.speedX;
+          }
+          if (this.y > canvas.height || this.y < 0) {
+            this.speedY = -this.speedY;
+          }
+          this.x += this.speedX;
+          this.y += this.speedY;
         }
       }
 
@@ -153,10 +153,10 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
         }
       }
     };
-    
+
     const handleResize = () => {
-        setCanvasSize();
-        init();
+      setCanvasSize();
+      init();
     };
 
     init();
@@ -176,7 +176,7 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [handleMouseMove, handleTouchMove, handleMouseOut, handleTouchEnd]);
+  }, []);
 
   return <canvas ref={canvasRef} className={cn('fixed top-0 left-0 -z-10', className)} />;
 };
