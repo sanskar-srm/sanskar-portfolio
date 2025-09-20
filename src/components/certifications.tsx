@@ -83,6 +83,7 @@ const coursesData = [
     title: 'Full-Stack Web Development',
     issuer: 'Code Academy',
     url: '#',
+    imageUrl: '/courseCert/WebDev.jpg',
   },
   {
     title: 'Data Structures & Algorithms',
