@@ -34,15 +34,15 @@ const hackathonData = [
     url: '#',
   },
   {
-    title: 'Future of Fintech Challenge',
-    issuer: 'DevPost',
-    award: 'Finalist',
+    title: 'Uploading Soon',
+    issuer: '',
+    award: '',
     url: '#',
   },
   {
-    title: 'Sustainable Tech Jam',
-    issuer: 'Green Code',
-    award: 'Innovation Prize',
+    title: 'Uploading Soon',
+    issuer: '',
+    award: '',
     url: '#',
   },
 ];
