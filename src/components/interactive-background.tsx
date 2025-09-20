@@ -105,6 +105,7 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
       }
 
       draw() {
+        if (!ctx) return;
         ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -124,6 +125,7 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
     };
 
     const animate = () => {
+      if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (const particle of particles) {
         particle.update();
@@ -134,6 +136,7 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
     };
 
     const connect = () => {
+      if (!ctx) return;
       let opacityValue = 1;
       for (let a = 0; a < particles.length; a++) {
         for (let b = a; b < particles.length; b++) {
@@ -154,9 +157,13 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
       }
     };
 
+    let resizeTimer: NodeJS.Timeout;
     const handleResize = () => {
-      setCanvasSize();
-      init();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        setCanvasSize();
+        init();
+      }, 100);
     };
 
     init();
@@ -175,6 +182,7 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
       window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
+      clearTimeout(resizeTimer);
     };
   }, []);
 
