@@ -87,8 +87,8 @@ const coursesData = [
     imageUrl: '/courseCert/WebDev.jpg',
   },
   {
-    title: 'Data Structures & Algorithms',
-    issuer: 'AlgoExpert',
+    title: 'DSA using JAVA',
+    issuer: 'YouTube - Kunal Kushwaha',
     url: '#',
   },
 ];
@@ -406,5 +406,3 @@ export default function Certifications() {
     </section>
   );
 }
-
-    
