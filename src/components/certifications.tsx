@@ -69,15 +69,15 @@ const bootcampData = [
 
 const coursesData = [
   {
+    title: 'Advanced React Specialist',
+    issuer: 'React University',
+    url: '#',
+  },
+  {
     title: 'Advanced React JS Frontend',
     issuer: 'Udemy',
     url: '#',
     imageUrl: '/courseCert/react.jpg',
-  },
-  {
-    title: 'Advanced React Specialist',
-    issuer: 'React University',
-    url: '#',
   },
   {
     title: 'Web Development',

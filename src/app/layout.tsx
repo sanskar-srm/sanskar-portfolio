@@ -4,7 +4,7 @@ import './globals.css';
 import './animations.css';
 
 export const metadata: Metadata = {
-  title: 'KineticFolio',
+  title: 'Sanskar Bhadani',
   description: 'A modern, responsive portfolio website built with Next.js and Tailwind CSS.',
 };
 
