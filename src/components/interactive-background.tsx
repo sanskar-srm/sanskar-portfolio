@@ -76,6 +76,7 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
       }
 
       update() {
+        if (!canvas) return;
         // Mouse interaction
         const dxMouse = mouse.current.x - this.x;
         const dyMouse = mouse.current.y - this.y;
@@ -116,6 +117,7 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
 
     const init = () => {
       particles = [];
+      if (!canvas) return;
       const numberOfParticles = (canvas.width * canvas.height) / 10000;
       for (let i = 0; i < numberOfParticles; i++) {
         const x = Math.random() * canvas.width;
@@ -125,7 +127,7 @@ const InteractiveBackground: React.FC<InteractiveBackgroundProps> = ({className}
     };
 
     const animate = () => {
-      if (!ctx) return;
+      if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (const particle of particles) {
         particle.update();
