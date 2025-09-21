@@ -15,7 +15,7 @@ export default function Hero() {
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 mt-8 md:mt-0">
               <div className="absolute inset-0 border-4 rounded-full border-primary/50 shadow-lg accent-glow"></div>
               <Image
-                src="/pp.jpg"
+                src="/profile.jpg"
                 alt="Profile photo"
                 fill
                 className="object-cover object-[center_7%] rounded-full"
