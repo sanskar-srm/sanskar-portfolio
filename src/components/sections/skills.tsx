@@ -99,8 +99,8 @@ export default function Skills() {
             </SplitReveal>
           </div>
           <FadeIn className="max-w-md text-bone/60 md:justify-self-end">
-            The tools I reach for to turn complex problems into intuitive, scalable products — from interface to
-            infrastructure.
+            The tools I reach for to turn complex problems into intuitive, scalable products — on the web, and natively on
+            Android &amp; iOS with React Native.
           </FadeIn>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function Skills() {
       <VelocityMarquee />
 
       <div className="mx-auto max-w-[1600px] px-5 md:px-10">
-        <ul ref={grid} className="grid grid-cols-2 gap-3 [perspective:1200px] sm:grid-cols-3 md:gap-4 lg:grid-cols-5">
+        <ul ref={grid} className="grid grid-cols-2 gap-3 [perspective:1200px] sm:grid-cols-3 md:grid-cols-4 md:gap-4 xl:grid-cols-7">
           {skills.map((s, i) => (
             <li key={s.name} data-skill>
               <TiltCard max={14} className="group h-full rounded-2xl">

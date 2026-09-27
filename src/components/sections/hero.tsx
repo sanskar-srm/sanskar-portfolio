@@ -8,7 +8,7 @@ import {useApp} from '@/lib/store';
 import Magnetic from '@/components/ui/magnetic';
 import XRay from '@/components/ui/xray';
 
-const tags = ['Full-stack', 'Generative AI', 'Scalable UX'];
+const tags = ['Full-stack', 'React Native', 'Android · iOS', 'Generative AI'];
 
 function Name({outline = false}: {outline?: boolean}) {
   const line = outline ? 'text-outline-acid' : '';
@@ -46,7 +46,7 @@ function NameXRay() {
   );
 }
 
-export default function Hero() {
+export default function Hero({hasResume}: {hasResume: boolean}) {
   const root = useRef<HTMLElement>(null);
   const loaded = useApp(s => s.loaded);
   const reducedMotion = useApp(s => s.reducedMotion);
@@ -123,7 +123,7 @@ export default function Hero() {
             </span>
             Open to new opportunities
           </p>
-          <p data-hero-fade className="eyebrow">{profile.role}</p>
+          <p data-hero-fade className="eyebrow">{profile.role} · Web &amp; Mobile</p>
         </div>
 
         {/* Mid layer: the name */}
@@ -185,6 +185,28 @@ export default function Hero() {
                   View work
                 </a>
               </Magnetic>
+              {hasResume && (
+                <Magnetic>
+                  <div className="glass inline-flex items-center rounded-full p-1">
+                    <a
+                      href={profile.resume}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full px-5 py-3 font-medium transition-colors duration-300 hover:text-acid"
+                    >
+                      Resume <span aria-hidden>↗</span>
+                      <span className="sr-only">(view, opens in a new tab)</span>
+                    </a>
+                    <a
+                      href={`${profile.resume}?download=1`}
+                      aria-label="Download resume (PDF)"
+                      className="grid h-11 w-11 place-items-center rounded-full bg-white/10 transition-colors duration-300 hover:bg-acid hover:text-ink-950"
+                    >
+                      <span aria-hidden>↓</span>
+                    </a>
+                  </div>
+                </Magnetic>
+              )}
             </div>
             <div data-hero-fade className="hidden items-center gap-3 md:flex" aria-hidden>
               <span className="eyebrow">Scroll</span>

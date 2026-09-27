@@ -11,7 +11,7 @@ import Magnetic from '@/components/ui/magnetic';
 const links = chapters.slice(1);
 const ease = [0.19, 1, 0.22, 1] as const;
 
-export default function Nav() {
+export default function Nav({hasResume}: {hasResume: boolean}) {
   const hidden = useApp(s => s.navHidden);
   const chapter = useApp(s => s.chapter);
   const menuOpen = useApp(s => s.menuOpen);
@@ -79,15 +79,18 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-2">
+            {hasResume && (
             <Magnetic strength={0.3} className="hidden sm:inline-block">
               <a
                 href={profile.resume}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors hover:border-acid/50 hover:text-acid"
               >
-                Resume <span aria-hidden>↓</span>
+                Resume <span aria-hidden>↗</span>
               </a>
             </Magnetic>
+            )}
             <button
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -138,9 +141,11 @@ export default function Nav() {
                   {s.label}
                 </a>
               ))}
-              <a href={profile.resume} download className="text-acid">
-                Resume ↓
-              </a>
+              {hasResume && (
+                <a href={profile.resume} target="_blank" rel="noopener noreferrer" className="text-acid">
+                  Resume ↗
+                </a>
+              )}
             </div>
           </motion.div>
         )}

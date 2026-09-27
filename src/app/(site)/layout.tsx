@@ -5,14 +5,16 @@ import Nav from '@/components/layout/nav';
 import Preloader from '@/components/layout/preloader';
 import ScrollProgress from '@/components/layout/scroll-progress';
 import Stage from '@/components/layout/stage';
+import {getSettings} from '@/lib/settings-store';
 
-export default function SiteLayout({children}: {children: React.ReactNode}) {
+export default async function SiteLayout({children}: {children: React.ReactNode}) {
+  const {resumeUrl} = await getSettings();
   return (
     <>
       <Runtime />
       <Preloader />
       <Stage />
-      <Nav />
+      <Nav hasResume={!!resumeUrl} />
       <ScrollProgress />
       {children}
       <Grain />

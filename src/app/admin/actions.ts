@@ -1,6 +1,6 @@
 'use server';
 
-import {revalidatePath} from 'next/cache';
+import {revalidatePath, revalidateTag} from 'next/cache';
 import {redirect} from 'next/navigation';
 import {
   adminConfigured,
@@ -15,6 +15,8 @@ import {
 } from '@/lib/admin/auth';
 import {ExperienceListSchema, type Experience} from '@/lib/experience';
 import {saveExperience} from '@/lib/experience-store';
+import {SettingsSchema} from '@/lib/settings';
+import {saveSettings} from '@/lib/settings-store';
 
 export type LoginState = {error?: string; email?: string};
 
@@ -58,5 +60,21 @@ export async function saveExperienceAction(list: Experience[]): Promise<{ok: boo
     return {ok: false, error: e instanceof Error ? e.message : 'Could not save.'};
   }
   revalidatePath('/');
+  return {ok: true};
+}
+
+export async function saveResumeAction(resumeUrl: string): Promise<{ok: boolean; error?: string}> {
+  if (!(await isAuthenticated())) return {ok: false, error: 'Your session expired. Please sign in again.'};
+
+  const parsed = SettingsSchema.safeParse({resumeUrl});
+  if (!parsed.success) return {ok: false, error: parsed.error.issues[0].message};
+
+  try {
+    await saveSettings(parsed.data);
+  } catch (e) {
+    return {ok: false, error: e instanceof Error ? e.message : 'Could not save.'};
+  }
+  revalidateTag('resume');
+  revalidatePath('/', 'layout');
   return {ok: true};
 }

@@ -2,10 +2,14 @@ export const profile = {
   firstName: 'Sanskar',
   lastName: 'Bhadani',
   role: 'Software Engineer',
-  tagline: 'Full-stack developer building scalable, user-friendly applications — and exploring generative AI.',
+  /** What I ship, shown in the hero and About */
+  disciplines: ['Web apps', 'Android & iOS apps', 'Generative AI'],
+  tagline:
+    'Full-stack & React Native developer — building scalable web apps and native-feeling Android & iOS apps, while exploring generative AI.',
   bio: 'I’m a full-stack developer passionate about building scalable, user-friendly applications and exploring generative AI. I turn complex problems into intuitive solutions, combining modern technologies with creativity, leadership, and practical impact.',
   photo: '/profile.jpg',
-  resume: '/resume.pdf',
+  /** Served by app/resume/route.ts from the Google Drive link set in /admin */
+  resume: '/resume',
   email: 'sanskarbhadani0810@gmail.com',
   contactBlurb:
     'Have a project in mind or just want to say hi? Feel free to reach out. I’m always open to discussing new opportunities and collaborations.',

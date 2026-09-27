@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {useRef} from 'react';
 import {milestoneGroups} from '@/content/milestones';
 import {profile} from '@/content/profile';
-import {projects} from '@/content/projects';
+import {appProjects, projects} from '@/content/projects';
 import {skills} from '@/content/skills';
 import {gsap, queueRefresh, useGSAP} from '@/lib/gsap';
 import {useApp} from '@/lib/store';
@@ -15,7 +15,7 @@ import XRay from '@/components/ui/xray';
 const count = (key: string) => milestoneGroups.find(g => g.key === key)?.items.length ?? 0;
 
 const stats = [
-  {value: projects.length, label: 'Featured projects'},
+  {value: projects.length + appProjects.length, label: 'Featured projects'},
   {value: count('hackathons'), label: 'Hackathons'},
   {value: count('bootcamps') + count('courses'), label: 'Certifications & courses'},
   {value: skills.length, label: 'Core technologies'},
@@ -66,7 +66,7 @@ export default function About() {
       // Desktop: pin the whole chapter while the statement "reads itself".
       mm.add('(min-width: 1024px)', () => {
         const tl = gsap.timeline({
-          scrollTrigger: {trigger: pin.current, start: 'top top', end: '+=130%', scrub: 0.6, pin: true, anticipatePin: 1, refreshPriority: 2},
+          scrollTrigger: {trigger: pin.current, start: 'top top', end: '+=130%', scrub: 0.6, pin: true, anticipatePin: 1, refreshPriority: 3},
         });
         tl.fromTo(words, {opacity: 0.12}, {opacity: 1, stagger: 0.05, ease: 'none'}, 0)
           .fromTo(q('[data-portrait]'), {scale: 1.18, filter: 'saturate(0.2)'}, {scale: 1, filter: 'saturate(1)', ease: 'none'}, 0)
@@ -110,7 +110,16 @@ export default function About() {
               ))}
             </p>
 
-            <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 border-t border-white/10 pt-10 sm:grid-cols-4">
+            <ul className="mt-10 flex flex-wrap gap-2" aria-label="What I build">
+              {profile.disciplines.map((d, i) => (
+                <li key={d} className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-bone/80">
+                  <span className="font-mono text-[10px] text-acid">0{i + 1}</span>
+                  {d}
+                </li>
+              ))}
+            </ul>
+
+            <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10 border-t border-white/10 pt-10 sm:grid-cols-4">
               {stats.map(s => (
                 <div key={s.label} className="flex flex-col">
                   <dt className="eyebrow order-2 mt-3">{s.label}</dt>

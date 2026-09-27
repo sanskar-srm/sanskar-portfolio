@@ -1,5 +1,43 @@
 import type {SVGProps} from 'react';
 
+export const ReactNativeIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
+    <title>React Native</title>
+    <rect x="34" y="8" width="60" height="112" rx="12" strokeWidth="6" />
+    <circle cx="64" cy="64" r="6" fill="currentColor" stroke="none" />
+    <g strokeWidth="4">
+      <ellipse cx="64" cy="64" rx="26" ry="10" />
+      <ellipse cx="64" cy="64" rx="26" ry="10" transform="rotate(60 64 64)" />
+      <ellipse cx="64" cy="64" rx="26" ry="10" transform="rotate(120 64 64)" />
+    </g>
+    <path d="M56 106h16" strokeWidth="6" strokeLinecap="round" />
+  </svg>
+);
+
+export const AndroidIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <title>Android</title>
+    <path d="M20 88a44 44 0 0 1 88 0Z" />
+    <path d="M38 34 28 18M90 34l10-16" stroke="currentColor" strokeWidth="6" strokeLinecap="round" />
+    <circle cx="46" cy="66" r="6" fill="var(--bg, #07070a)" />
+    <circle cx="82" cy="66" r="6" fill="var(--bg, #07070a)" />
+  </svg>
+);
+
+export const AppleIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <title>iOS</title>
+    <path d="M86.3 67.6c-.1-12.3 10-18.2 10.5-18.5-5.7-8.4-14.6-9.5-17.8-9.6-7.6-.8-14.8 4.5-18.7 4.5-3.8 0-9.8-4.4-16.1-4.3-8.3.1-15.9 4.8-20.2 12.2-8.6 14.9-2.2 37 6.2 49.1 4.1 5.9 9 12.6 15.4 12.3 6.2-.2 8.5-4 16-4s9.6 4 16.1 3.9c6.6-.1 10.8-6 14.9-12 4.7-6.8 6.6-13.5 6.7-13.8-.1-.1-12.9-5-13-19.8ZM74 31.4c3.4-4.1 5.7-9.9 5.1-15.6-4.9.2-10.9 3.3-14.4 7.4-3.2 3.7-5.9 9.5-5.2 15.2 5.5.4 11.1-2.8 14.5-7Z" />
+  </svg>
+);
+
+export const ExpoIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <title>Expo</title>
+    <path d="M60 22c1.9-3.4 6.1-3.4 8 0l46 82c1.9 3.4-.2 6-3.3 4.2L70 83.5c-3.7-2.2-8.3-2.2-12 0l-40.7 24.7C14.2 110 12.1 107.4 14 104Z" />
+  </svg>
+);
+
 export const NextJsIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
     <title>Next.js</title>

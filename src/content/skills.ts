@@ -1,5 +1,9 @@
 import {
+  AndroidIcon,
+  AppleIcon,
   CppIcon,
+  ExpoIcon,
+  ReactNativeIcon,
   FirebaseIcon,
   JavaIcon,
   MySqlIcon,
@@ -14,6 +18,10 @@ import {
 export const skills = [
   {name: 'Next.js', icon: NextJsIcon, group: 'Frontend'},
   {name: 'ReactJS', icon: ReactJsIcon, group: 'Frontend'},
+  {name: 'React Native', icon: ReactNativeIcon, group: 'Mobile'},
+  {name: 'Android', icon: AndroidIcon, group: 'Mobile'},
+  {name: 'iOS', icon: AppleIcon, group: 'Mobile'},
+  {name: 'Expo', icon: ExpoIcon, group: 'Mobile'},
   {name: 'TypeScript', icon: TypeScriptIcon, group: 'Language'},
   {name: 'TailwindCSS', icon: TailwindCssIcon, group: 'Frontend'},
   {name: 'Node.js', icon: NodeJsIcon, group: 'Backend'},

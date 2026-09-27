@@ -81,3 +81,49 @@ export const projects = projectsData.filter(p => !p.hidden);
 
 /** A link of '#' means "not available" in the original data. */
 export const realLink = (url?: string) => (url && url !== '#' ? url : undefined);
+
+/* ── App Dev ─────────────────────────────────────────────────────── */
+
+export type AppProject = {
+  title: string;
+  role: string;
+  tagline: string;
+  description: string;
+  icon: string;
+  githubUrl?: string;
+  platforms: string[];
+  tech: string[];
+  /** Each screenshot is paired with the feature it demonstrates. */
+  screens: {src: string; title: string; caption: string}[];
+};
+
+export const appProjects: AppProject[] = [
+  {
+    title: 'Hopeloop',
+    role: 'Mobile Developer',
+    tagline: 'An offline-first emergency companion.',
+    description:
+      'Hopeloop keeps people informed and connected when networks fail — live location with local disaster alerts, Bluetooth peer-to-peer messaging with nearby devices, and an AI guide that works without a signal.',
+    icon: '/appDev/Hopeloop/Logo/icon.png',
+    githubUrl: 'https://github.com/sanskar-srm/Hopeloop',
+    platforms: ['Android', 'iOS'],
+    tech: ['React Native', 'Expo', 'TypeScript', 'Expo Router', 'NativeWind', 'Reanimated', 'BLE', 'Expo Location'],
+    screens: [
+      {
+        src: '/appDev/Hopeloop/Screenshots/ss2.jpeg',
+        title: 'Live dashboard',
+        caption: 'GPS location with nearby seismic (USGS) and harsh-weather (Open-Meteo) alerts.',
+      },
+      {
+        src: '/appDev/Hopeloop/Screenshots/ss1.jpeg',
+        title: 'P2P radar',
+        caption: 'Discovers nearby devices over Bluetooth to message with no internet at all.',
+      },
+      {
+        src: '/appDev/Hopeloop/Screenshots/ss3.jpeg',
+        title: 'Asha — offline AI',
+        caption: 'Step-by-step emergency guidance for water, fire, bleeding and more — offline.',
+      },
+    ],
+  },
+];

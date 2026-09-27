@@ -3,7 +3,8 @@
 import Image from 'next/image';
 import {useRef, useState} from 'react';
 import {profile} from '@/content/profile';
-import {projects, realLink, type Project} from '@/content/projects';
+import {appProjects, projects, realLink, type Project} from '@/content/projects';
+import AppShowcase from './app-showcase';
 import {gsap, queueRefresh, useGSAP} from '@/lib/gsap';
 import {useApp} from '@/lib/store';
 import Magnetic from '@/components/ui/magnetic';
@@ -156,13 +157,42 @@ export default function Projects() {
 
   return (
     <section ref={root} id="projects" data-chapter aria-labelledby="projects-title" className="relative">
-      <div ref={pinRef} className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden py-24 lg:py-0">
+      <div className="mx-auto max-w-[1600px] px-5 pt-28 md:px-10 md:pt-40">
+        <Eyebrow index="03">Selected work</Eyebrow>
+        <div className="mt-6 flex flex-wrap items-end justify-between gap-8">
+          <SplitReveal as="h2" id="projects-title" mode="chars" className="font-display text-giga font-extrabold uppercase">
+            Featured <span className="font-serif font-normal normal-case italic text-acid">Projects</span>
+          </SplitReveal>
+          <FadeIn>
+            <nav aria-label="Project categories" className="flex flex-wrap gap-3">
+              <a href="#app-dev" className="group glass flex items-center gap-3 rounded-full px-5 py-3 text-sm transition-colors hover:border-acid/50">
+                <span className="font-mono text-xs text-acid">A</span> App Dev
+                <span className="rounded-full bg-white/10 px-2 py-0.5 font-mono text-[10px]">{String(appProjects.length).padStart(2, '0')}</span>
+              </a>
+              <a href="#web-dev" className="group glass flex items-center gap-3 rounded-full px-5 py-3 text-sm transition-colors hover:border-acid/50">
+                <span className="font-mono text-xs text-acid">B</span> Web App Dev
+                <span className="rounded-full bg-white/10 px-2 py-0.5 font-mono text-[10px]">{String(projects.length).padStart(2, '0')}</span>
+              </a>
+            </nav>
+          </FadeIn>
+        </div>
+      </div>
+
+      {appProjects.map((app, i) => (
+        <AppShowcase key={app.title} app={app} index={i} />
+      ))}
+
+      <div ref={pinRef} id="web-dev" className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden py-24 lg:py-0">
         <div className="mx-auto mb-10 flex w-full max-w-[1600px] flex-wrap items-end justify-between gap-6 px-5 md:px-10 lg:mb-8">
           <div>
-            <Eyebrow index="03">Selected work</Eyebrow>
-            <SplitReveal as="h2" id="projects-title" mode="chars" className="mt-6 font-display text-giga font-extrabold uppercase">
-              Featured <span className="font-serif font-normal normal-case italic text-acid">Projects</span>
-            </SplitReveal>
+            <FadeIn className="flex items-center gap-3">
+              <span className="rounded-full border border-acid/40 bg-acid/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-acid">
+                B · Web App Dev
+              </span>
+            </FadeIn>
+            <h3 className="mt-5 font-display text-huge font-extrabold uppercase">
+              Web <span className="font-serif font-normal normal-case italic text-acid">Applications</span>
+            </h3>
           </div>
           <FadeIn className="hidden items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-mist lg:flex">
             Scroll <span className="inline-block h-px w-16 bg-acid" /> Explore
