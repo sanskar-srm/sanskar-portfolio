@@ -10,10 +10,13 @@ import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 import {Resend} from 'resend';
 
+const escapeHtml = (value: string) =>
+  value.replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'})[c]!);
+
 const SendEmailInputSchema = z.object({
-  name: z.string().describe('The name of the sender.'),
+  name: z.string().min(1).max(200).describe('The name of the sender.'),
   email: z.string().email().describe('The email address of the sender.'),
-  message: z.string().describe('The message content.'),
+  message: z.string().min(1).max(5000).describe('The message content.'),
 });
 export type SendEmailInput = z.infer<typeof SendEmailInputSchema>;
 
@@ -35,7 +38,8 @@ const sendEmailFlow = ai.defineFlow(
         from: 'onboarding@resend.dev', // This should be a configured domain in Resend
         to: 'sanskarbhadani0810@gmail.com', // Replace with your actual email
         subject: `Message from ${input.name} via Portfolio`,
-        html: `<p>Name: ${input.name}</p><p>Email: ${input.email}</p><p>Message: ${input.message}</p>`,
+        reply_to: input.email,
+        html: `<p>Name: ${escapeHtml(input.name)}</p><p>Email: ${escapeHtml(input.email)}</p><p>Message: ${escapeHtml(input.message).replaceAll('\n', '<br>')}</p>`,
       });
       return {success: true};
     } catch (error) {
