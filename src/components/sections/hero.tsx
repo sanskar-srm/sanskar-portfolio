@@ -46,7 +46,7 @@ function NameXRay() {
   );
 }
 
-export default function Hero({hasResume}: {hasResume: boolean}) {
+export default function Hero() {
   const root = useRef<HTMLElement>(null);
   const loaded = useApp(s => s.loaded);
   const reducedMotion = useApp(s => s.reducedMotion);
@@ -185,8 +185,7 @@ export default function Hero({hasResume}: {hasResume: boolean}) {
                   View work
                 </a>
               </Magnetic>
-              {hasResume && (
-                <Magnetic>
+              <Magnetic>
                   <div className="glass inline-flex items-center rounded-full p-1">
                     <a
                       href={profile.resume}
@@ -205,8 +204,7 @@ export default function Hero({hasResume}: {hasResume: boolean}) {
                       <span aria-hidden>↓</span>
                     </a>
                   </div>
-                </Magnetic>
-              )}
+              </Magnetic>
             </div>
             <div data-hero-fade className="hidden items-center gap-3 md:flex" aria-hidden>
               <span className="eyebrow">Scroll</span>

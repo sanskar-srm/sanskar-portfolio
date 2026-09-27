@@ -67,7 +67,7 @@ export default function ResumePanel({initial}: {initial: string}) {
         </button>
       </div>
       <p role="status" className={`mt-3 min-h-5 text-sm ${status?.ok ? 'text-acid' : 'text-red-400'}`}>
-        {status?.msg ?? (!saved ? <span className="text-amber-300">No resume set — the resume buttons are hidden on the site.</span> : null)}
+        {status?.msg ?? (!saved ? <span className="text-amber-300">No resume set — the site's resume buttons show a “being updated” page until you add a link.</span> : null)}
       </p>
     </section>
   );
