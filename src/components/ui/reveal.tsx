@@ -26,7 +26,8 @@ export function SplitReveal({children, as: Tag = 'div', id, className, mode = 'l
   const ref = useRef<HTMLDivElement>(null);
   // Any block tag works at runtime; typed as div to keep the ref simple.
   const Comp = Tag as 'div';
-  const tier = useApp(s => s.tier);
+  // Only whether capabilities are known — a later tier downgrade must not rebuild pins.
+  const tier = useApp(s => (s.tier === 'pending' ? 'pending' : 'ready'));
   const reducedMotion = useApp(s => s.reducedMotion);
   const loaded = useApp(s => s.loaded);
 

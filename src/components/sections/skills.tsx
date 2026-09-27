@@ -16,7 +16,8 @@ const alsoUsed = Array.from(new Set(projects.flatMap(p => p.tech))).filter(t => 
 function VelocityMarquee() {
   const rows = useRef<HTMLDivElement>(null);
   const reducedMotion = useApp(s => s.reducedMotion);
-  const tier = useApp(s => s.tier);
+  // Only whether capabilities are known — a later tier downgrade must not rebuild pins.
+  const tier = useApp(s => (s.tier === 'pending' ? 'pending' : 'ready'));
 
   useGSAP(
     () => {

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {useRef, useState} from 'react';
 import {profile} from '@/content/profile';
 import {projects, realLink, type Project} from '@/content/projects';
-import {gsap, useGSAP} from '@/lib/gsap';
+import {gsap, queueRefresh, useGSAP} from '@/lib/gsap';
 import {useApp} from '@/lib/store';
 import Magnetic from '@/components/ui/magnetic';
 import Modal from '@/components/ui/modal';
@@ -103,7 +103,8 @@ export default function Projects() {
   const pinRef = useRef<HTMLDivElement>(null);
   const track = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<Project | null>(null);
-  const tier = useApp(s => s.tier);
+  // Only whether capabilities are known — a later tier downgrade must not rebuild pins.
+  const tier = useApp(s => (s.tier === 'pending' ? 'pending' : 'ready'));
   const reducedMotion = useApp(s => s.reducedMotion);
   const loaded = useApp(s => s.loaded);
 
@@ -137,13 +138,18 @@ export default function Projects() {
             pin: true,
             anticipatePin: 1,
             invalidateOnRefresh: true,
+            refreshPriority: 1,
             onUpdate: curve,
             onRefresh: curve,
           },
         });
         curve();
       });
-      return () => mm.revert();
+      queueRefresh();
+      return () => {
+        mm.revert();
+        queueRefresh();
+      };
     },
     {dependencies: [tier, reducedMotion, loaded], scope: root}
   );
@@ -173,7 +179,7 @@ export default function Projects() {
             )}
           >
             {projects.map((p, i) => (
-              <div key={p.title} data-slide className={reducedMotion ? undefined : 'lg:w-[min(50vw,780px)] lg:shrink-0'}>
+              <div key={p.title} data-slide className={reducedMotion ? undefined : 'lg:w-[min(50vw,780px,calc((100svh-240px)*1.15))] lg:shrink-0'}>
                 <FadeIn>
                   <ProjectCard p={p} index={i} onOpen={() => setActive(p)} />
                 </FadeIn>

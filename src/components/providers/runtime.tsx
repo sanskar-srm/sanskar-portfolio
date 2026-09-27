@@ -3,7 +3,7 @@
 import Lenis from 'lenis';
 import {useEffect} from 'react';
 import {detectCapabilities} from '@/lib/capabilities';
-import {gsap, ScrollTrigger} from '@/lib/gsap';
+import {gsap, queueRefresh, ScrollTrigger} from '@/lib/gsap';
 import {lens, lensTarget, pointer, scroll} from '@/lib/live';
 import {useApp} from '@/lib/store';
 
@@ -116,8 +116,22 @@ export default function Runtime() {
     document.documentElement.style.overflow = '';
     lenisInstance?.start();
     // Fonts + images have settled by now; re-measure every trigger.
-    requestAnimationFrame(() => ScrollTrigger.refresh());
-    document.fonts?.ready.then(() => ScrollTrigger.refresh());
+    queueRefresh();
+    document.fonts?.ready.then(queueRefresh);
+
+    // Late layout shifts (fonts, images, re-split text) move every trigger below them.
+    const main = document.getElementById('main');
+    if (!main) return;
+    let lastHeight = main.offsetHeight;
+    const ro = new ResizeObserver(() => {
+      const h = main.offsetHeight;
+      if (Math.abs(h - lastHeight) > 2) {
+        lastHeight = h;
+        queueRefresh();
+      }
+    });
+    ro.observe(main);
+    return () => ro.disconnect();
   }, [loaded]);
 
   // 4. Pointer tracking, damping, and lens easing

@@ -6,7 +6,7 @@ import {milestoneGroups} from '@/content/milestones';
 import {profile} from '@/content/profile';
 import {projects} from '@/content/projects';
 import {skills} from '@/content/skills';
-import {gsap, useGSAP} from '@/lib/gsap';
+import {gsap, queueRefresh, useGSAP} from '@/lib/gsap';
 import {useApp} from '@/lib/store';
 import CountUp from '@/components/ui/count-up';
 import {Eyebrow} from '@/components/ui/reveal';
@@ -51,7 +51,8 @@ function PortraitXRay() {
 export default function About() {
   const root = useRef<HTMLElement>(null);
   const pin = useRef<HTMLDivElement>(null);
-  const tier = useApp(s => s.tier);
+  // Only whether capabilities are known — a later tier downgrade must not rebuild pins.
+  const tier = useApp(s => (s.tier === 'pending' ? 'pending' : 'ready'));
   const reducedMotion = useApp(s => s.reducedMotion);
   const loaded = useApp(s => s.loaded);
 
@@ -65,7 +66,7 @@ export default function About() {
       // Desktop: pin the whole chapter while the statement "reads itself".
       mm.add('(min-width: 1024px)', () => {
         const tl = gsap.timeline({
-          scrollTrigger: {trigger: pin.current, start: 'top top', end: '+=130%', scrub: 0.6, pin: true, anticipatePin: 1},
+          scrollTrigger: {trigger: pin.current, start: 'top top', end: '+=130%', scrub: 0.6, pin: true, anticipatePin: 1, refreshPriority: 2},
         });
         tl.fromTo(words, {opacity: 0.12}, {opacity: 1, stagger: 0.05, ease: 'none'}, 0)
           .fromTo(q('[data-portrait]'), {scale: 1.18, filter: 'saturate(0.2)'}, {scale: 1, filter: 'saturate(1)', ease: 'none'}, 0)
@@ -80,7 +81,11 @@ export default function About() {
           scrollTrigger: {trigger: q('[data-statement]')[0], start: 'top 80%', end: 'bottom 45%', scrub: 0.6},
         });
       });
-      return () => mm.revert();
+      queueRefresh();
+      return () => {
+        mm.revert();
+        queueRefresh();
+      };
     },
     {dependencies: [tier, reducedMotion, loaded], scope: root}
   );
