@@ -91,7 +91,8 @@ export default function AppShowcase({app, index}: {app: AppProject; index: numbe
               scrub: 0.8,
               pin: true,
               anticipatePin: 1,
-              refreshPriority: 2,
+              // Between About (3) and the web gallery (1); earlier showcases refresh first.
+              refreshPriority: 2.9 - index * 0.1,
               invalidateOnRefresh: true,
             },
           }
@@ -117,7 +118,7 @@ export default function AppShowcase({app, index}: {app: AppProject; index: numbe
         queueRefresh();
       };
     },
-    {dependencies: [ready, reducedMotion, loaded, n], scope: root}
+    {dependencies: [ready, reducedMotion, loaded, n, index], scope: root}
   );
 
   const goTo = (i: number) => {
